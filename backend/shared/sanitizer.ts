@@ -1,17 +1,51 @@
 /**
+ * Repeatedly apply a regex replacement until no more matches are found.
+ * Prevents bypass via nested payloads like "javasjavasccript:ript:".
+ */
+function replaceUntilClean(
+  input: string,
+  pattern: RegExp,
+  replacement: string,
+): string {
+  let previous = input;
+  let current = input.replace(pattern, replacement);
+  while (current !== previous) {
+    previous = current;
+    current = current.replace(pattern, replacement);
+  }
+  return current;
+}
+
+/**
  * Sanitize string by removing HTML tags and potential script injections.
  * Only allows plain text through.
  */
 export function sanitizeString(input: string): string {
-  return input
-    .replace(/<[^>]*>/g, "") // Strip HTML tags
-    .replace(/javascript:/gi, "") // Remove javascript: protocol
-    .replace(/on\w+\s*=/gi, "") // Remove inline event handlers
-    .replace(/&lt;/g, "<") // Decode common entities first
+  let result = input;
+
+  // Strip HTML tags
+  result = result.replace(/<[^>]*>/g, "");
+
+  // Remove dangerous URI schemes (handles whitespace/tab obfuscation)
+  // Covers javascript:, vbscript:, data:, and variants
+  // No \b word boundary — allows detection inside nested bypass payloads
+  result = replaceUntilClean(
+    result,
+    /(?:java\s*script|vb\s*script|data)\s*:/gi,
+    "",
+  );
+
+  // Remove inline event handlers (loop to prevent nested bypass)
+  result = replaceUntilClean(result, /on\w+\s*=/gi, "");
+
+  // Decode common entities, then re-encode < and >
+  result = result
+    .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
-    .replace(/</g, "&lt;") // Encode < and >
-    .replace(/>/g, "&gt;")
-    .trim();
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+  return result.trim();
 }
 
 /**

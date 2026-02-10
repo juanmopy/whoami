@@ -17,8 +17,30 @@ describe("Sanitizer", () => {
       expect(sanitizeString("javascript:alert(1)")).toBe("alert(1)");
     });
 
+    it("should remove nested javascript: bypass attempts", () => {
+      expect(sanitizeString("javasjavascript:cript:alert(1)")).toBe("alert(1)");
+    });
+
+    it("should remove javascript: with whitespace obfuscation", () => {
+      expect(sanitizeString("java\tscript:alert(1)")).toBe("alert(1)");
+    });
+
+    it("should remove vbscript: protocol", () => {
+      expect(sanitizeString("vbscript:MsgBox(1)")).toBe("MsgBox(1)");
+    });
+
+    it("should remove data: protocol", () => {
+      expect(sanitizeString("data:text/html,payload")).toBe(
+        "text/html,payload",
+      );
+    });
+
     it("should remove inline event handlers", () => {
       expect(sanitizeString("onerror=alert(1)")).toBe("alert(1)");
+    });
+
+    it("should remove nested event handler bypass attempts", () => {
+      expect(sanitizeString("ononerrorerror=alert(1)")).toBe("alert(1)");
     });
 
     it("should trim whitespace", () => {
