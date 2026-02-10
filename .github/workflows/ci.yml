@@ -46,7 +46,7 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
       - run: npm ci
-      - run: npx ng test --no-watch --code-coverage
+      - run: npx ng test --no-watch --coverage
         working-directory: frontend/portfolio-spa
 
   test-backend:
