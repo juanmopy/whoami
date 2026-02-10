@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "portfolio": "Portafolio",
+    "contact": "Contacto",
+    "booking": "Agendar"
+  },
+  "hero": {
+    "name": "Tu Nombre",
+    "cta": {
+      "projects": "Ver Proyectos",
+      "contact": "Contactar"
+    },
+    "scrollDown": "Desplazar a la siguiente sección"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "skills": "Habilidades",
+    "experience": "Experiencia"
+  },
+  "portfolio": {
+    "title": "Portafolio",
+    "filterAll": "Todos",
+    "viewDetail": "Ver detalle",
+    "demo": "Demo",
+    "code": "Código",
+    "close": "Cerrar"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes un proyecto en mente? ¡Hablemos!",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado! Te responderé pronto.",
+    "error": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+    "rateLimit": "Demasiados envíos. Por favor espera antes de enviar de nuevo.",
+    "validation": {
+      "required": "Este campo es obligatorio",
+      "minLength": "Debe tener al menos {{min}} caracteres",
+      "email": "Por favor, ingresa un correo electrónico válido"
+    }
+  },
+  "booking": {
+    "title": "Agendar Reunión",
+    "subtitle": "Elige un horario que te funcione",
+    "intro": "Llamada Intro — 30 min",
+    "consulting": "Consultoría — 60 min",
+    "fallback": "Reservar directamente en Cal.com"
+  },
+  "footer": {
+    "backToTop": "Volver arriba",
+    "copyright": "Todos los derechos reservados."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "darkMode": "Cambiar a modo oscuro",
+    "lightMode": "Cambiar a modo claro"
+  }
+}

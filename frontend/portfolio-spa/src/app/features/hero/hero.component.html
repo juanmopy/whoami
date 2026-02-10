@@ -1,0 +1,63 @@
+<section class="hero" id="inicio">
+  <div class="hero__background" aria-hidden="true">
+    <div class="hero__gradient"></div>
+    <div class="hero__particles">
+      @for (i of [1, 2, 3, 4, 5, 6]; track i) {
+        <span class="hero__particle" [class.hero__particle--static]="prefersReducedMotion()"></span>
+      }
+    </div>
+  </div>
+
+  <div class="hero__content">
+    <div class="hero__photo-wrapper">
+      <img
+        src="assets/images/profile.webp"
+        alt="Profile photo"
+        class="hero__photo"
+        width="200"
+        height="200"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+
+    <h1 class="hero__name">Tu Nombre</h1>
+
+    <div class="hero__tagline" aria-live="polite" aria-label="Typed tagline">
+      <span class="hero__tagline-text">{{ displayText() }}</span>
+      <span class="hero__cursor" [class.hero__cursor--visible]="showCursor()" aria-hidden="true"
+        >|</span
+      >
+    </div>
+
+    <div class="hero__cta">
+      <a class="hero__btn hero__btn--primary" routerLink="/portfolio"> Ver Proyectos </a>
+      <a class="hero__btn hero__btn--secondary" routerLink="/contact"> Contactar </a>
+    </div>
+  </div>
+
+  <button
+    #scrollIndicator
+    type="button"
+    class="hero__scroll-indicator"
+    [class.hero__scroll-indicator--static]="prefersReducedMotion()"
+    (click)="scrollDown()"
+    aria-label="Scroll to next section"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 5v14" />
+      <path d="m19 12-7 7-7-7" />
+    </svg>
+  </button>
+</section>

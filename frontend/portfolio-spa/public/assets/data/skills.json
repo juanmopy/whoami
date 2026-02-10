@@ -1,0 +1,42 @@
+[
+  {
+    "category": "Frontend",
+    "items": [
+      { "name": "Angular", "level": 90 },
+      { "name": "TypeScript", "level": 95 },
+      { "name": "RxJS", "level": 85 },
+      { "name": "HTML / CSS / SCSS", "level": 90 },
+      { "name": "Tailwind CSS", "level": 80 }
+    ]
+  },
+  {
+    "category": "Backend",
+    "items": [
+      { "name": "Node.js", "level": 85 },
+      { "name": "Python", "level": 75 },
+      { "name": "REST APIs", "level": 90 },
+      { "name": "GraphQL", "level": 70 },
+      { "name": "PostgreSQL", "level": 80 }
+    ]
+  },
+  {
+    "category": "DevOps & Cloud",
+    "items": [
+      { "name": "Docker", "level": 80 },
+      { "name": "GitHub Actions", "level": 85 },
+      { "name": "Google Cloud", "level": 75 },
+      { "name": "AWS", "level": 70 },
+      { "name": "Terraform", "level": 65 }
+    ]
+  },
+  {
+    "category": "Tools & Practices",
+    "items": [
+      { "name": "Git", "level": 95 },
+      { "name": "Agile / Scrum", "level": 85 },
+      { "name": "Testing", "level": 80 },
+      { "name": "CI/CD", "level": 85 },
+      { "name": "Security (SCA)", "level": 75 }
+    ]
+  }
+]

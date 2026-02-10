@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "booking": "Book a Meeting"
+  },
+  "hero": {
+    "name": "Your Name",
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Contact Me"
+    },
+    "scrollDown": "Scroll to next section"
+  },
+  "about": {
+    "title": "About Me",
+    "skills": "Skills",
+    "experience": "Experience"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "filterAll": "All",
+    "viewDetail": "View detail",
+    "demo": "Demo",
+    "code": "Code",
+    "close": "Close"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have a project in mind? Let's talk!",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent! I'll get back to you shortly.",
+    "error": "There was an error sending the message. Please try again.",
+    "rateLimit": "Too many submissions. Please wait before sending again.",
+    "validation": {
+      "required": "This field is required",
+      "minLength": "Must be at least {{min}} characters",
+      "email": "Please enter a valid email address"
+    }
+  },
+  "booking": {
+    "title": "Book a Meeting",
+    "subtitle": "Choose a time slot that works for you",
+    "intro": "Intro Call — 30 min",
+    "consulting": "Consulting — 60 min",
+    "fallback": "Book directly on Cal.com"
+  },
+  "footer": {
+    "backToTop": "Back to top",
+    "copyright": "All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "darkMode": "Switch to dark mode",
+    "lightMode": "Switch to light mode"
+  }
+}

@@ -1,0 +1,18 @@
+<div class="timeline">
+  @for (exp of experiences(); track exp.period; let i = $index) {
+    <article class="timeline__item" [class.timeline__item--right]="i % 2 !== 0" appAnimateOnScroll>
+      <div class="timeline__dot" aria-hidden="true"></div>
+      <div class="timeline__card">
+        <span class="timeline__period">{{ exp.period }}</span>
+        <h3 class="timeline__title">{{ exp.title }}</h3>
+        <p class="timeline__company">{{ exp.company }}</p>
+        <p class="timeline__description">{{ exp.description }}</p>
+        <div class="timeline__tags">
+          @for (tag of exp.tags; track tag) {
+            <span class="timeline__tag">{{ tag }}</span>
+          }
+        </div>
+      </div>
+    </article>
+  }
+</div>

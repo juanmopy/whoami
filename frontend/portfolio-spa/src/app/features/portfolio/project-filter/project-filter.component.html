@@ -1,0 +1,19 @@
+<div class="filter">
+  <div class="filter__chips">
+    @for (tag of tags(); track tag) {
+      <button
+        type="button"
+        class="filter__chip"
+        [class.filter__chip--active]="isSelected(tag)"
+        (click)="toggleTag(tag)"
+        [attr.aria-pressed]="isSelected(tag)"
+      >
+        {{ tag }}
+      </button>
+    }
+  </div>
+
+  @if (selectedTags().length > 0) {
+    <button type="button" class="filter__clear" (click)="clearFilters()">Limpiar filtros</button>
+  }
+</div>

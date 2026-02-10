@@ -1,0 +1,31 @@
+export default {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'scope-enum': [
+      2,
+      'always',
+      [
+        'app',
+        'portfolio',
+        'hero',
+        'about',
+        'contact',
+        'booking',
+        'navbar',
+        'footer',
+        'theme',
+        'seo',
+        'shared',
+        'core',
+        'backend',
+        'infra',
+        'ci',
+        'cd',
+        'sca',
+        'deps',
+      ],
+    ],
+    'scope-empty': [1, 'never'],
+    'subject-case': [2, 'always', 'lower-case'],
+  },
+};

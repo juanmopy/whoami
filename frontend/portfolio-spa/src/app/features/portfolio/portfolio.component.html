@@ -1,0 +1,99 @@
+<section class="portfolio" id="portfolio">
+  <div class="portfolio__container">
+    <h2 class="portfolio__title" appAnimateOnScroll>Portafolio</h2>
+
+    @if (allTags().length > 0) {
+      <app-project-filter
+        [tags]="allTags()"
+        [selectedTags]="selectedTags()"
+        (filterChange)="onFilterChange($event)"
+      />
+    }
+
+    <div class="portfolio__grid">
+      @for (project of filteredProjects(); track project.id) {
+        <app-project-card
+          [project]="project"
+          (viewDetail)="onViewDetail($event)"
+          appAnimateOnScroll
+        />
+      } @empty {
+        <p class="portfolio__empty">No se encontraron proyectos con los filtros seleccionados.</p>
+      }
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  @if (selectedProject(); as project) {
+    <div
+      class="portfolio__modal-backdrop"
+      (click)="closeDetail()"
+      (keydown.enter)="closeDetail()"
+      (keydown.escape)="closeDetail()"
+      role="dialog"
+      aria-modal="true"
+      tabindex="0"
+      [attr.aria-label]="'Project detail: ' + project.title"
+    >
+      <article
+        class="portfolio__modal"
+        (click)="$event.stopPropagation()"
+        (keydown)="$event.stopPropagation()"
+        tabindex="-1"
+        role="document"
+      >
+        <button
+          type="button"
+          class="portfolio__modal-close"
+          (click)="closeDetail()"
+          aria-label="Close detail"
+        >
+          &times;
+        </button>
+
+        <div class="portfolio__modal-image-wrapper">
+          <img
+            [src]="project.image"
+            [alt]="project.title"
+            class="portfolio__modal-image"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="portfolio__modal-content">
+          <h3 class="portfolio__modal-title">{{ project.title }}</h3>
+          <p class="portfolio__modal-description">{{ project.description }}</p>
+
+          <div class="portfolio__modal-tags">
+            @for (tag of project.tags; track tag) {
+              <span class="portfolio__modal-tag">{{ tag }}</span>
+            }
+          </div>
+
+          <div class="portfolio__modal-links">
+            @if (project.demoUrl) {
+              <a
+                [href]="project.demoUrl"
+                class="portfolio__modal-link portfolio__modal-link--demo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver Demo
+              </a>
+            }
+            @if (project.repoUrl) {
+              <a
+                [href]="project.repoUrl"
+                class="portfolio__modal-link portfolio__modal-link--repo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver Código
+              </a>
+            }
+          </div>
+        </div>
+      </article>
+    </div>
+  }
+</section>

@@ -1,0 +1,38 @@
+{
+  "name": "whoami",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Portfolio SPA monorepo",
+  "workspaces": [
+    "frontend/portfolio-spa",
+    "backend"
+  ],
+  "scripts": {
+    "prepare": "husky"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "lint-staged": {
+    "frontend/portfolio-spa/**/*.ts": [
+      "eslint --fix --config frontend/portfolio-spa/eslint.config.js",
+      "prettier --write"
+    ],
+    "frontend/portfolio-spa/**/*.html": [
+      "eslint --fix --config frontend/portfolio-spa/eslint.config.js",
+      "prettier --write"
+    ],
+    "frontend/portfolio-spa/**/*.scss": [
+      "prettier --write"
+    ],
+    "backend/**/*.ts": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "20.4.1",
+    "@commitlint/config-conventional": "20.4.1",
+    "husky": "9.1.7",
+    "lint-staged": "16.2.7"
+  }
+}

@@ -1,0 +1,26 @@
+<section class="booking" id="booking">
+  <div class="booking__container">
+    <h2 class="booking__title" appAnimateOnScroll>Agendar una Reunión</h2>
+    <p class="booking__subtitle" appAnimateOnScroll>
+      Elige el tipo de reunión y selecciona un horario que te convenga.
+    </p>
+
+    <div class="booking__options" appAnimateOnScroll role="radiogroup" aria-label="Tipo de reunión">
+      @for (type of meetingTypes; track type.id) {
+        <button
+          type="button"
+          class="booking__option"
+          [class.booking__option--selected]="selectedType().id === type.id"
+          [attr.aria-pressed]="selectedType().id === type.id"
+          (click)="selectType(type)"
+        >
+          <h3 class="booking__option-title">{{ type.title }}</h3>
+          <p class="booking__option-duration">{{ type.duration }}</p>
+          <p class="booking__option-description">{{ type.description }}</p>
+        </button>
+      }
+    </div>
+
+    <app-calendar-embed [calLink]="activeCalLink()" />
+  </div>
+</section>

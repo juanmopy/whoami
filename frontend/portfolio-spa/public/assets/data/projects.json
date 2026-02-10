@@ -1,0 +1,59 @@
+[
+  {
+    "id": "project-1",
+    "title": "E-Commerce Platform",
+    "description": "Full-stack e-commerce platform with Angular frontend, Node.js backend, and PostgreSQL database. Features include real-time inventory, payment processing, and admin dashboard.",
+    "image": "assets/images/projects/project-1.webp",
+    "tags": ["Angular", "Node.js", "PostgreSQL", "Docker"],
+    "demoUrl": "https://example.com/demo1",
+    "repoUrl": "https://github.com/user/ecommerce",
+    "featured": true
+  },
+  {
+    "id": "project-2",
+    "title": "Task Management App",
+    "description": "Collaborative task management application with real-time updates, drag-and-drop boards, and team analytics. Built with Angular and Firebase.",
+    "image": "assets/images/projects/project-2.webp",
+    "tags": ["Angular", "Firebase", "TypeScript", "RxJS"],
+    "demoUrl": "https://example.com/demo2",
+    "repoUrl": "https://github.com/user/taskmanager",
+    "featured": true
+  },
+  {
+    "id": "project-3",
+    "title": "Weather Dashboard",
+    "description": "Interactive weather dashboard with location-based forecasts, animated charts, and PWA support for offline access.",
+    "image": "assets/images/projects/project-3.webp",
+    "tags": ["TypeScript", "REST APIs", "SCSS", "PWA"],
+    "demoUrl": "https://example.com/demo3",
+    "featured": false
+  },
+  {
+    "id": "project-4",
+    "title": "CI/CD Pipeline Tool",
+    "description": "Custom CI/CD pipeline visualization tool for monitoring builds, deployments, and infrastructure health across multiple environments.",
+    "image": "assets/images/projects/project-4.webp",
+    "tags": ["Python", "Docker", "GitHub Actions", "Terraform"],
+    "repoUrl": "https://github.com/user/cicd-tool",
+    "featured": true
+  },
+  {
+    "id": "project-5",
+    "title": "Portfolio Website",
+    "description": "Personal portfolio SPA built with Angular 19+, Tailwind CSS, and serverless backend. Features dark mode, animations, and SEO optimization.",
+    "image": "assets/images/projects/project-5.webp",
+    "tags": ["Angular", "Tailwind CSS", "TypeScript", "Cloud Functions"],
+    "demoUrl": "https://example.com",
+    "repoUrl": "https://github.com/user/portfolio",
+    "featured": false
+  },
+  {
+    "id": "project-6",
+    "title": "API Gateway Service",
+    "description": "Microservice API gateway with rate limiting, authentication, logging, and request routing. Built with Node.js and deployed on GCP.",
+    "image": "assets/images/projects/project-6.webp",
+    "tags": ["Node.js", "Google Cloud", "Docker", "REST APIs"],
+    "repoUrl": "https://github.com/user/api-gateway",
+    "featured": false
+  }
+]

@@ -1,0 +1,75 @@
+.calendar-embed {
+  width: 100%;
+
+  &__container {
+    min-height: 500px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+
+  &__loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem 1rem;
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+  }
+
+  &__spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: cal-spin 0.7s linear infinite;
+  }
+
+  &__fallback {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border: 1.5px dashed var(--color-border);
+    border-radius: 0.75rem;
+    background-color: var(--color-bg-secondary);
+  }
+
+  &__fallback-text {
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  &__fallback-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+  }
+}
+
+@keyframes cal-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calendar-embed__spinner {
+    animation: none;
+  }
+}

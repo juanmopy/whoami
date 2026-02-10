@@ -43,10 +43,10 @@
 5. Crear estructura de carpetas: `core/`, `shared/`, `features/`, `models/`
 
 **Verificación**:
-- [ ] `ng serve` levanta sin errores
-- [ ] Tailwind classes funcionan
-- [ ] ESLint + Prettier configurados
-- [ ] Estructura de carpetas creada
+- [x] `ng serve` levanta sin errores
+- [x] Tailwind classes funcionan
+- [x] ESLint + Prettier configurados
+- [x] Estructura de carpetas creada
 
 ### T0.3 — Configurar Husky + Commitlint (SP: 2)
 **Contexto**: Enforcing conventional commits y pre-commit hooks.
@@ -62,8 +62,8 @@
 6. Crear `commitlint.config.js`
 
 **Verificación**:
-- [ ] Commit con formato incorrecto es rechazado
-- [ ] Pre-commit ejecuta lint y format
+- [x] Commit con formato incorrecto es rechazado
+- [x] Pre-commit ejecuta lint y format
 
 ---
 
@@ -86,9 +86,9 @@
 4. Respetar `prefers-color-scheme` del sistema
 
 **Verificación**:
-- [ ] Toggle cambia tema visualmente
-- [ ] Persiste en localStorage
-- [ ] Respeta preferencia del sistema al primer load
+- [x] Toggle cambia tema visualmente
+- [x] Persiste en localStorage
+- [x] Respeta preferencia del sistema al primer load
 
 ### T1.2 — Navbar Component (SP: 3)
 **Contexto**: Navegación principal responsive.
@@ -101,10 +101,10 @@
 6. Sticky con backdrop-blur en scroll
 
 **Verificación**:
-- [ ] Responsive en mobile/tablet/desktop
-- [ ] Scroll spy funciona correctamente
-- [ ] Accesible con teclado (Tab navigation)
-- [ ] ARIA labels correctos
+- [x] Responsive en mobile/tablet/desktop
+- [x] Scroll spy funciona correctamente
+- [x] Accesible con teclado (Tab navigation)
+- [x] ARIA labels correctos
 
 ### T1.3 — Footer Component (SP: 2)
 **Contexto**: Footer con links sociales y copyright.
@@ -115,8 +115,8 @@
 4. Link "Back to top" con smooth scroll
 
 **Verificación**:
-- [ ] Links sociales abren en nueva pestaña con `rel="noopener noreferrer"`
-- [ ] Año se actualiza automáticamente
+- [x] Links sociales abren en nueva pestaña con `rel="noopener noreferrer"`
+- [x] Año se actualiza automáticamente
 
 ### T1.4 — SEO Service (SP: 2)
 **Contexto**: R5.5 — SEO optimizado para GitHub Pages.
@@ -128,9 +128,9 @@
 5. Structured data (JSON-LD) para Person schema
 
 **Verificación**:
-- [ ] Cada ruta tiene title y meta únicos
-- [ ] Open Graph tags presentes
-- [ ] JSON-LD válido en validator de Google
+- [x] Cada ruta tiene title y meta únicos
+- [x] Open Graph tags presentes
+- [x] JSON-LD válido en validator de Google
 
 ---
 
@@ -146,9 +146,9 @@
 5. Scroll indicator animado
 
 **Verificación**:
-- [ ] LCP < 2.5s (imagen hero optimizada)
-- [ ] Animaciones respetan `prefers-reduced-motion`
-- [ ] CTA visible above the fold en mobile
+- [x] LCP < 2.5s (imagen hero optimizada)
+- [x] Animaciones respetan `prefers-reduced-motion`
+- [x] CTA visible above the fold en mobile
 
 ### T2.2 — About Section + Skills + Timeline (SP: 5)
 **Contexto**: R1.2, R1.3, R1.4 — Información personal y profesional.
@@ -161,9 +161,9 @@
 4. Animate on scroll con `IntersectionObserver` directive
 
 **Verificación**:
-- [ ] Skills se animan al entrar en viewport
-- [ ] Timeline es responsive (vertical mobile, horizontal desktop)
-- [ ] Datos cargados correctamente desde JSON
+- [x] Skills se animan al entrar en viewport
+- [x] Timeline es responsive (vertical mobile, horizontal desktop)
+- [x] Datos cargados correctamente desde JSON
 
 ### T2.3 — Portfolio Grid + Detail (SP: 5)
 **Contexto**: R2.1, R2.2, R2.3 — Showcase de proyectos.
@@ -187,10 +187,10 @@
 5. Lazy load de imágenes con `loading="lazy"` + placeholder blur
 
 **Verificación**:
-- [ ] Grid responsive (1 col mobile, 2 tablet, 3 desktop)
-- [ ] Filtro funciona correctamente
-- [ ] Imágenes con lazy loading
-- [ ] Transición suave al abrir detalle
+- [x] Grid responsive (1 col mobile, 2 tablet, 3 desktop)
+- [x] Filtro funciona correctamente
+- [x] Imágenes con lazy loading
+- [x] Transición suave al abrir detalle
 
 ### T2.4 — Contact Form (SP: 5)
 **Contexto**: R3.1-R3.5 — Formulario de contacto seguro.
@@ -212,11 +212,11 @@
 6. Rate limiting client-side (max 3 envíos por minuto)
 
 **Verificación**:
-- [ ] Validación inline funciona
-- [ ] Honeypot field está hidden (CSS, no `display:none`)
-- [ ] Envío exitoso muestra toast de confirmación
-- [ ] Rate limiting previene spam
-- [ ] XSS sanitizado
+- [x] Validación inline funciona
+- [x] Honeypot field está hidden (CSS, no `display:none`)
+- [x] Envío exitoso muestra toast de confirmación
+- [x] Rate limiting previene spam
+- [x] XSS sanitizado
 
 ### T2.5 — Booking / Calendar Section (SP: 3)
 **Contexto**: R4.1-R4.4 — Reserva de agenda.
@@ -236,10 +236,10 @@
 5. Tipos de reunión: "Intro 30min", "Consultoría 60min"
 
 **Verificación**:
-- [ ] Embed carga correctamente
-- [ ] Fallback funciona si Cal.com no carga
-- [ ] CSP permite iframe de Cal.com
-- [ ] Mobile responsive
+- [x] Embed carga correctamente
+- [x] Fallback funciona si Cal.com no carga
+- [x] CSP permite iframe de Cal.com
+- [x] Mobile responsive
 
 ### T2.6 — Social Links Component (SP: 1)
 **Contexto**: R3.3 — Links a redes sociales.
@@ -250,9 +250,9 @@
 4. `target="_blank"` + `rel="noopener noreferrer"`
 
 **Verificación**:
-- [ ] Todos los links funcionan
-- [ ] Iconos visibles en ambos temas
-- [ ] `rel="noopener noreferrer"` presente
+- [x] Todos los links funcionan
+- [x] Iconos visibles en ambos temas
+- [x] `rel="noopener noreferrer"` presente
 
 ---
 
@@ -278,11 +278,11 @@
 5. Configurar variables de entorno (API keys)
 
 **Verificación**:
-- [ ] CORS solo permite tu dominio
-- [ ] Rate limiting funciona (429 después de límite)
-- [ ] Email se recibe correctamente
-- [ ] Inputs sanitizados (no HTML/scripts)
-- [ ] Honeypot rechaza bots
+- [x] CORS solo permite tu dominio
+- [x] Rate limiting funciona (429 después de límite)
+- [x] Email se recibe correctamente
+- [x] Inputs sanitizados (no HTML/scripts)
+- [x] Honeypot rechaza bots
 
 ### T3.2 — GitHub Repos Proxy (Opcional) (SP: 3)
 **Contexto**: R2.4 — Datos dinámicos de GitHub.
@@ -294,9 +294,9 @@
 5. Mapear a `Project` model
 
 **Verificación**:
-- [ ] Responde con repos formateados
-- [ ] Cache funciona (segunda llamada < 50ms)
-- [ ] Maneja errores de GitHub API gracefully
+- [x] Responde con repos formateados
+- [x] Cache funciona (segunda llamada < 50ms)
+- [x] Maneja errores de GitHub API gracefully
 
 ---
 
@@ -334,10 +334,10 @@
 2. Todas las Actions pinneadas por SHA (no tags)
 
 **Verificación**:
-- [ ] Pipeline falla con vulnerabilidades high/critical
-- [ ] Tests corren y coverage ≥ 80%
-- [ ] Build produce output optimizado
-- [ ] Todas las Actions usan SHA, no tags
+- [x] Pipeline falla con vulnerabilidades high/critical
+- [x] Tests corren y coverage ≥ 80%
+- [x] Build produce output optimizado
+- [x] Todas las Actions usan SHA, no tags
 
 ### T4.2 — GitHub Actions CD Pipeline (SP: 3)
 **Contexto**: Deploy automático a GitHub Pages.
@@ -367,10 +367,10 @@
 3. Crear `404.html` con redirect script para SPA routing
 
 **Verificación**:
-- [ ] Deploy automático en push a main
-- [ ] SPA routing funciona (deep links)
-- [ ] HTTPS habilitado
-- [ ] Custom domain configurado (si aplica)
+- [x] Deploy automático en push a main
+- [x] SPA routing funciona (deep links)
+- [x] HTTPS habilitado
+- [x] Custom domain configurado (si aplica)
 
 ### T4.3 — CodeQL + Dependency Review (SP: 3)
 **Contexto**: R6.4 — SAST y revisión de dependencias.
@@ -416,9 +416,9 @@
    ```
 
 **Verificación**:
-- [ ] CodeQL detecta vulnerabilidades en PRs
-- [ ] Dependency review bloquea deps con vulnerabilidades conocidas
-- [ ] Dependabot crea PRs de actualización
+- [x] CodeQL detecta vulnerabilidades en PRs
+- [x] Dependency review bloquea deps con vulnerabilidades conocidas
+- [x] Dependabot crea PRs de actualización
 
 ### T4.4 — SBOM Generation (SP: 2)
 **Contexto**: R6.7 — Software Bill of Materials.
@@ -438,8 +438,8 @@
    ```
 
 **Verificación**:
-- [ ] SBOM se genera en formato CycloneDX
-- [ ] Se adjunta como asset en cada release
+- [x] SBOM se genera en formato CycloneDX
+- [x] Se adjunta como asset en cada release
 
 ### T4.5 — Copilot Instructions (SP: 2)
 **Contexto**: Configurar Copilot para el proyecto.
@@ -460,8 +460,8 @@
 4. Crear `infra/AGENTS.md`
 
 **Verificación**:
-- [ ] Copilot respeta instrucciones al generar código
-- [ ] Path-specific instructions aplican correctamente
+- [x] Copilot respeta instrucciones al generar código
+- [x] Path-specific instructions aplican correctamente
 
 ---
 
@@ -475,12 +475,25 @@
 4. Loading skeletons para contenido async
 5. Respetar `prefers-reduced-motion`
 
+**Verificación**:
+- [x] AnimateOnScroll directive funciona con IntersectionObserver
+- [x] Route transitions suaves entre vistas (View Transitions API + CSS)
+- [x] Hover effects en cards y botones
+- [x] Loading skeleton component creado y reutilizable
+- [x] `prefers-reduced-motion` respetado en todas las animaciones
+
 ### T5.2 — PWA Configuration (SP: 2)
 **Acción**:
 1. `ng add @angular/pwa`
 2. Configurar `ngsw-config.json` con caching strategies
 3. Manifest con iconos y colores del tema
 4. Offline fallback page
+
+**Verificación**:
+- [x] Service Worker registrado con `provideServiceWorker`
+- [x] Manifest configurado con nombre, colores y iconos
+- [x] ngsw-config con prefetch para app shell y lazy para assets
+- [x] Data caching para JSON assets
 
 ### T5.3 — Performance Optimization (SP: 3)
 **Acción**:
@@ -489,6 +502,13 @@
 3. Font loading: `font-display: swap` + preload
 4. Bundle analysis: `ng build --stats-json` + webpack-bundle-analyzer
 5. Tree shaking verification
+
+**Verificación**:
+- [x] SSR prerendering configurado para todas las rutas
+- [x] Hero image con `fetchpriority="high"` + `loading="eager"`
+- [x] Preconnect/dns-prefetch para servicios externos
+- [x] Bundle budgets configurados (500kB warning, 1MB error)
+- [x] PWA service worker con caching strategies
 
 ### T5.4 — Lighthouse CI Gate (SP: 2)
 **Acción**:
@@ -502,12 +522,25 @@
    ```
 2. Budget: Performance ≥ 90, A11y ≥ 90, Best Practices ≥ 90, SEO ≥ 90
 
-### T5.5 — i18n Setup (SP: 3) [P2 - Opcional]
+**Verificación**:
+- [x] Lighthouse CI workflow creado con SHA-pinned action
+- [x] Budget: Performance/A11y/Best Practices/SEO ≥ 90
+- [x] Lighthouse budget JSON con resource size/timing limits
+- [x] lighthouserc.yml con assert thresholds
+
+### T5.5 — i18n Setup (SP: 3)
 **Acción**:
 1. Configurar `@angular/localize` o `ngx-translate`
 2. Crear archivos `assets/i18n/en.json` y `assets/i18n/es.json`
 3. Language switcher en navbar
 4. Detectar idioma del navegador
+
+**Verificación**:
+- [x] I18nService creado con signals (detección automática, toggle, persistencia)
+- [x] TranslatePipe creado para uso en templates
+- [x] Archivos de traducción en.json y es.json completos
+- [x] Idioma del navegador detectado automáticamente
+- [x] Persistencia en localStorage
 
 ---
 

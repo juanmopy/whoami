@@ -1,0 +1,49 @@
+{
+  "name": "portfolio-spa",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint",
+    "format": "prettier --write \"src/**/*.{ts,html,scss}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,scss}\"",
+    "serve:ssr:portfolio-spa": "node dist/portfolio-spa/server/server.mjs"
+  },
+  "private": true,
+  "packageManager": "npm@10.9.3",
+  "dependencies": {
+    "@angular/common": "^21.1.0",
+    "@angular/compiler": "^21.1.0",
+    "@angular/core": "^21.1.0",
+    "@angular/forms": "^21.1.0",
+    "@angular/platform-browser": "^21.1.0",
+    "@angular/platform-server": "^21.1.0",
+    "@angular/router": "^21.1.0",
+    "@angular/service-worker": "^21.1.0",
+    "@angular/ssr": "^21.1.3",
+    "@tailwindcss/postcss": "4.1.18",
+    "express": "^5.1.0",
+    "postcss": "8.5.6",
+    "rxjs": "~7.8.0",
+    "tailwindcss": "4.1.18",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular-eslint/schematics": "21.2.0",
+    "@angular/build": "^21.1.3",
+    "@angular/cli": "^21.1.3",
+    "@angular/compiler-cli": "^21.1.0",
+    "@types/express": "^5.0.1",
+    "@types/node": "^20.17.19",
+    "angular-eslint": "21.2.0",
+    "eslint": "9.39.2",
+    "eslint-config-prettier": "10.1.8",
+    "jsdom": "^27.1.0",
+    "prettier": "3.8.1",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
+  }
+}

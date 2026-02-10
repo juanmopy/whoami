@@ -1,0 +1,60 @@
+<article
+  class="card"
+  (click)="onViewDetail()"
+  (keydown.enter)="onViewDetail()"
+  tabindex="0"
+  role="button"
+  [attr.aria-label]="'View details for ' + project().title"
+>
+  <div class="card__image-wrapper">
+    <img
+      [src]="project().image"
+      [alt]="project().title"
+      class="card__image"
+      loading="lazy"
+      width="400"
+      height="250"
+    />
+    <div class="card__overlay">
+      <span class="card__overlay-text">Ver detalle</span>
+    </div>
+  </div>
+
+  <div class="card__content">
+    <h3 class="card__title">{{ project().title }}</h3>
+    <p class="card__description">{{ project().description }}</p>
+
+    <div class="card__tags">
+      @for (tag of project().tags; track tag) {
+        <span class="card__tag">{{ tag }}</span>
+      }
+    </div>
+
+    <div class="card__links">
+      @if (project().demoUrl) {
+        <a
+          [href]="project().demoUrl"
+          class="card__link card__link--demo"
+          target="_blank"
+          rel="noopener noreferrer"
+          (click)="$event.stopPropagation()"
+          aria-label="Live demo"
+        >
+          Demo
+        </a>
+      }
+      @if (project().repoUrl) {
+        <a
+          [href]="project().repoUrl"
+          class="card__link card__link--repo"
+          target="_blank"
+          rel="noopener noreferrer"
+          (click)="$event.stopPropagation()"
+          aria-label="Source code"
+        >
+          Código
+        </a>
+      }
+    </div>
+  </div>
+</article>

@@ -1,0 +1,30 @@
+<div class="calendar-embed">
+  @if (error()) {
+    <div class="calendar-embed__fallback">
+      <p class="calendar-embed__fallback-text">
+        No se pudo cargar el calendario. Puedes agendar directamente:
+      </p>
+      <a
+        [href]="fallbackUrl"
+        class="calendar-embed__fallback-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Agendar en Cal.com
+      </a>
+    </div>
+  } @else {
+    <div
+      #embedContainer
+      id="cal-embed"
+      class="calendar-embed__container"
+      [attr.data-cal-link]="calLink()"
+    ></div>
+    @if (!loaded()) {
+      <div class="calendar-embed__loading" aria-label="Cargando calendario">
+        <div class="calendar-embed__spinner"></div>
+        <p>Cargando calendario...</p>
+      </div>
+    }
+  }
+</div>

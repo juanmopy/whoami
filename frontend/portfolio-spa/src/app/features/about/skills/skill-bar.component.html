@@ -1,0 +1,27 @@
+<div class="skills">
+  @for (category of categories(); track category.category) {
+    <div class="skills__category" appAnimateOnScroll>
+      <h3 class="skills__category-title">{{ category.category }}</h3>
+      <div class="skills__list">
+        @for (skill of category.items; track skill.name) {
+          <div class="skills__item">
+            <div class="skills__item-header">
+              <span class="skills__item-name">{{ skill.name }}</span>
+              <span class="skills__item-level">{{ skill.level }}%</span>
+            </div>
+            <div
+              class="skills__bar"
+              role="progressbar"
+              [attr.aria-valuenow]="skill.level"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              [attr.aria-label]="skill.name + ' proficiency: ' + skill.level + '%'"
+            >
+              <div class="skills__bar-fill" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>

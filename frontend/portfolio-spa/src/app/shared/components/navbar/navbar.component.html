@@ -1,0 +1,74 @@
+<nav
+  class="navbar"
+  [class.navbar--scrolled]="isScrolled()"
+  role="navigation"
+  aria-label="Main navigation"
+>
+  <div class="navbar__container">
+    <a class="navbar__brand" routerLink="/"> Portfolio </a>
+
+    <!-- Desktop nav -->
+    <ul class="navbar__links" role="menubar">
+      @for (link of navLinks; track link.path) {
+        <li role="none">
+          <a
+            role="menuitem"
+            class="navbar__link"
+            [routerLink]="link.path"
+            routerLinkActive="navbar__link--active"
+          >
+            {{ link.label }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <div class="navbar__actions">
+      <a class="navbar__cta" routerLink="/booking" routerLinkActive="navbar__cta--active">
+        Agendar
+      </a>
+
+      <app-theme-toggle />
+
+      <!-- Hamburger button -->
+      <button
+        class="navbar__hamburger"
+        type="button"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu"
+        (click)="toggleMenu()"
+      >
+        <span class="navbar__hamburger-line" [class.open]="isMenuOpen()"></span>
+        <span class="navbar__hamburger-line" [class.open]="isMenuOpen()"></span>
+        <span class="navbar__hamburger-line" [class.open]="isMenuOpen()"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  @if (isMenuOpen()) {
+    <div id="mobile-menu" class="navbar__mobile-menu" role="menu">
+      @for (link of navLinks; track link.path) {
+        <a
+          role="menuitem"
+          class="navbar__mobile-link"
+          [routerLink]="link.path"
+          routerLinkActive="navbar__mobile-link--active"
+          (click)="closeMenu()"
+        >
+          {{ link.label }}
+        </a>
+      }
+      <a
+        role="menuitem"
+        class="navbar__mobile-cta"
+        routerLink="/booking"
+        routerLinkActive="navbar__mobile-cta--active"
+        (click)="closeMenu()"
+      >
+        Agendar
+      </a>
+    </div>
+  }
+</nav>
