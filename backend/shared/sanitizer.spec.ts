@@ -13,6 +13,14 @@ describe("Sanitizer", () => {
       );
     });
 
+    it("should strip nested HTML tag bypass attempts", () => {
+      // <<script>script>alert(1) → first pass removes <<script> → "script>alert(1)"
+      // No more tags to strip, then > is encoded → safe plain text
+      expect(sanitizeString("<<script>script>alert(1)")).toBe(
+        "script&gt;alert(1)",
+      );
+    });
+
     it("should remove javascript: protocol", () => {
       expect(sanitizeString("javascript:alert(1)")).toBe("alert(1)");
     });

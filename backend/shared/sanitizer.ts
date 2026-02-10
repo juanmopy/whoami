@@ -23,8 +23,8 @@ function replaceUntilClean(
 export function sanitizeString(input: string): string {
   let result = input;
 
-  // Strip HTML tags
-  result = result.replace(/<[^>]*>/g, "");
+  // Strip HTML tags (loop to prevent nested tag bypass like "<<script>script>")
+  result = replaceUntilClean(result, /<[^>]*>/g, "");
 
   // Remove dangerous URI schemes (handles whitespace/tab obfuscation)
   // Covers javascript:, vbscript:, data:, and variants
