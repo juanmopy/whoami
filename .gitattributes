@@ -1,0 +1,23 @@
+# Auto detect text files and normalize line endings
+* text=auto eol=lf
+
+# Force LF for config files critical to CI
+.nvmrc text eol=lf
+.npmrc text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.ts text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.scss text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+
+# Binary files
+*.png binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
