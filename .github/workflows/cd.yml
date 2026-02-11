@@ -24,7 +24,7 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
       - run: npm ci
-      - run: npx ng build --configuration=production
+      - run: npx ng build --configuration=production --base-href /whoami/
         working-directory: frontend/portfolio-spa
       - name: Create 404.html for SPA routing
         run: cp frontend/portfolio-spa/dist/portfolio-spa/browser/index.html frontend/portfolio-spa/dist/portfolio-spa/browser/404.html
