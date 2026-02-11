@@ -69,7 +69,7 @@ describe('HeroComponent', () => {
     it('should render the name heading', () => {
       const h1 = fixture.nativeElement.querySelector('.hero__name') as HTMLElement;
       expect(h1).toBeTruthy();
-      expect(h1.textContent?.trim()).toBe('Tu Nombre');
+      expect(h1.textContent?.trim()).toBe('Juan Enrique Morales Castro');
     });
 
     it('should render CTA buttons', () => {

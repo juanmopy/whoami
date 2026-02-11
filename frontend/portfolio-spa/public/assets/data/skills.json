@@ -6,37 +6,37 @@
       { "name": "TypeScript", "level": 95 },
       { "name": "RxJS", "level": 85 },
       { "name": "HTML / CSS / SCSS", "level": 90 },
-      { "name": "Tailwind CSS", "level": 80 }
+      { "name": "JavaScript", "level": 90 }
     ]
   },
   {
-    "category": "Backend",
+    "category": "Backend & Data",
     "items": [
       { "name": "Node.js", "level": 85 },
       { "name": "Python", "level": 75 },
       { "name": "REST APIs", "level": 90 },
-      { "name": "GraphQL", "level": 70 },
-      { "name": "PostgreSQL", "level": 80 }
+      { "name": "PostgreSQL", "level": 80 },
+      { "name": "SQL", "level": 80 }
     ]
   },
   {
-    "category": "DevOps & Cloud",
+    "category": "Cloud & DevOps",
     "items": [
-      { "name": "Docker", "level": 80 },
-      { "name": "GitHub Actions", "level": 85 },
-      { "name": "Google Cloud", "level": 75 },
-      { "name": "AWS", "level": 70 },
-      { "name": "Terraform", "level": 65 }
+      { "name": "AWS / Lambda", "level": 80 },
+      { "name": "Azure DevOps", "level": 85 },
+      { "name": "GitHub", "level": 85 },
+      { "name": "Docker", "level": 75 },
+      { "name": "CI/CD", "level": 85 }
     ]
   },
   {
-    "category": "Tools & Practices",
+    "category": "Automatización & Tools",
     "items": [
+      { "name": "Power Automate", "level": 80 },
+      { "name": "Automation Anywhere", "level": 80 },
       { "name": "Git", "level": 95 },
       { "name": "Agile / Scrum", "level": 85 },
-      { "name": "Testing", "level": 80 },
-      { "name": "CI/CD", "level": 85 },
-      { "name": "Security (SCA)", "level": 75 }
+      { "name": "Bizagi", "level": 70 }
     ]
   }
 ]

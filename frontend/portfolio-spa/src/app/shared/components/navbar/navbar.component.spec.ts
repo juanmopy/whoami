@@ -39,7 +39,7 @@ describe('NavbarComponent', () => {
   it('should render brand link', () => {
     const brand = fixture.nativeElement.querySelector('.navbar__brand');
     expect(brand).toBeTruthy();
-    expect(brand.textContent.trim()).toBe('Portfolio');
+    expect(brand.textContent.trim()).toBe('Portafolio');
   });
 
   it('should render navigation links', () => {

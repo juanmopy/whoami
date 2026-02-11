@@ -16,7 +16,7 @@ const MEETING_TYPES: readonly MeetingType[] = [
     title: 'Intro',
     duration: '30 minutos',
     description: 'Conversación inicial para conocer tu proyecto y ver cómo puedo ayudarte.',
-    calLink: 'tu-usuario/30min',
+    calLink: 'juanmopy/30min',
   },
   {
     id: 'consulting',
@@ -24,7 +24,7 @@ const MEETING_TYPES: readonly MeetingType[] = [
     duration: '60 minutos',
     description:
       'Sesión en profundidad para revisar arquitectura, código o planificar un proyecto.',
-    calLink: 'tu-usuario/60min',
+    calLink: 'juanmopy/60min',
   },
 ];
 

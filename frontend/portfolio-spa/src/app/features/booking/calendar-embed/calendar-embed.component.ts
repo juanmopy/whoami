@@ -24,7 +24,7 @@ export class CalendarEmbedComponent implements AfterViewInit {
   private readonly destroyRef = inject(DestroyRef);
   private readonly platformId = inject(PLATFORM_ID);
 
-  readonly calLink = input('tu-usuario/30min');
+  readonly calLink = input('juanmopy/30min');
 
   protected readonly loaded = signal(false);
   protected readonly error = signal(false);

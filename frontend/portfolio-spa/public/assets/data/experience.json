@@ -1,30 +1,30 @@
 [
   {
-    "title": "Senior Full Stack Developer",
-    "company": "Company Name",
-    "period": "2022 — Presente",
-    "description": "Desarrollo de aplicaciones web enterprise con Angular y Node.js. Liderazgo técnico de un equipo de 5 developers.",
-    "tags": ["Angular", "Node.js", "PostgreSQL", "Docker"]
+    "title": "Technical Lead",
+    "company": "Tata Consultancy Services TCS",
+    "period": "2025 — Presente",
+    "description": "Lidero un equipo de desarrolladores en la arquitectura y entrega de aplicaciones web enterprise con Angular y Node.js. Defino estándares técnicos, gestiono pipelines CI/CD y superviso el diseño de bases de datos SQL/NoSQL para clientes de gran escala.",
+    "tags": ["Angular", "Node.js", "PostgreSQL", "NoSQL", "CI/CD"]
   },
   {
-    "title": "Full Stack Developer",
-    "company": "Previous Company",
-    "period": "2020 — 2022",
-    "description": "Diseño e implementación de microservicios REST y SPAs para clientes del sector fintech.",
-    "tags": ["TypeScript", "React", "Python", "AWS"]
+    "title": "Developer",
+    "company": "Tata Consultancy Services TCS",
+    "period": "2022 — 2025",
+    "description": "Desarrollo de arquitecturas serverless con AWS Lambda y automatización de procesos empresariales con Power Automate para clientes del sector banca. Gestión de ciclos de vida completos del software mediante Azure DevOps.",
+    "tags": ["AWS", "Lambda", "Power Automate", "Azure DevOps"]
   },
   {
-    "title": "Frontend Developer",
-    "company": "Startup Inc.",
-    "period": "2018 — 2020",
-    "description": "Construcción de interfaces responsive y accesibles. Migración de AngularJS a Angular moderno.",
-    "tags": ["Angular", "SCSS", "RxJS", "Jasmine"]
+    "title": "Desarrollador Middle RPA",
+    "company": "KPMG",
+    "period": "2021 — 2022",
+    "description": "Diseño y desarrollo de bots RPA con Automation Anywhere para automatizar procesos de auditoría y consultoría. Creación de scripts complementarios en Python y JavaScript para integración de datos y generación de reportes.",
+    "tags": ["RPA", "Automation Anywhere", "JavaScript", "Python"]
   },
   {
-    "title": "Junior Developer",
-    "company": "First Job Co.",
-    "period": "2016 — 2018",
-    "description": "Desarrollo de módulos frontend y backend para plataformas de e-commerce. Primer contacto con CI/CD.",
-    "tags": ["JavaScript", "PHP", "MySQL", "Git"]
+    "title": "Desarrollador RPA",
+    "company": "KPMG",
+    "period": "2021 — 2021",
+    "description": "Construcción de bots de automatización con Automation Anywhere para tareas repetitivas en procesos bancarios. Modelado de flujos de negocio en Bizagi y consultas SQL para extracción y validación de datos.",
+    "tags": ["RPA", "Automation Anywhere", "SQL", "Bizagi"]
   }
 ]
