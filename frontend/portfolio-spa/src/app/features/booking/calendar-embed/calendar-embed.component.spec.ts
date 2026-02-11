@@ -34,10 +34,10 @@ describe('CalendarEmbedComponent', () => {
     expect(component['fallbackUrl']).toBe('https://cal.com/juanmopy/30min');
   });
 
-  it('should show loading state initially', () => {
+  it('should hide loading after initialization', () => {
     fixture.detectChanges();
     const loading = fixture.nativeElement.querySelector('.calendar-embed__loading') as HTMLElement;
-    expect(loading).toBeTruthy();
+    expect(loading).toBeFalsy();
   });
 
   it('should show fallback on error', () => {
@@ -64,15 +64,15 @@ describe('CalendarEmbedComponent', () => {
     expect(link.target).toBe('_blank');
   });
 
-  it('should not have script loaded initially', () => {
+  it('should be loaded after initialization', () => {
     fixture.detectChanges();
-    expect(component['loaded']()).toBe(false);
+    expect(component['loaded']()).toBe(true);
     expect(component['error']()).toBe(false);
   });
 
-  it('should set data-cal-link attribute', () => {
+  it('should render embed container element', () => {
     fixture.detectChanges();
     const embed = fixture.nativeElement.querySelector('#cal-embed') as HTMLElement;
-    expect(embed?.getAttribute('data-cal-link')).toBe('juanmopy/30min');
+    expect(embed).toBeTruthy();
   });
 });

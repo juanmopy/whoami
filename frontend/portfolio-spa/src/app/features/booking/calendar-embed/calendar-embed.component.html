@@ -14,7 +14,11 @@
       </a>
     </div>
   } @else {
-    <div id="cal-embed" class="calendar-embed__container" [attr.data-cal-link]="calLink()"></div>
+    <div
+      id="cal-embed"
+      style="width: 100%; height: 100%; overflow: scroll"
+      class="calendar-embed__container"
+    ></div>
     @if (!loaded()) {
       <div
         class="calendar-embed__loading"
