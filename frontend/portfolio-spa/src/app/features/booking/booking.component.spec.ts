@@ -94,7 +94,7 @@ describe('BookingComponent', () => {
   });
 
   it('should update calLink when meeting type changes', () => {
-    expect(component['activeCalLink']()).toBe('tu-usuario/30min');
+    expect(component['activeCalLink']()).toBe('juanmopy/30min');
 
     const options = fixture.nativeElement.querySelectorAll(
       '.booking__option',
@@ -102,7 +102,7 @@ describe('BookingComponent', () => {
     options[1].click();
     fixture.detectChanges();
 
-    expect(component['activeCalLink']()).toBe('tu-usuario/60min');
+    expect(component['activeCalLink']()).toBe('juanmopy/60min');
   });
 
   it('should have aria-pressed on selected option', () => {

@@ -28,12 +28,12 @@ describe('CalendarEmbedComponent', () => {
 
   it('should use default calLink', () => {
     fixture.detectChanges();
-    expect(component.calLink()).toBe('tu-usuario/30min');
+    expect(component.calLink()).toBe('juanmopy/30min');
   });
 
   it('should compute fallback URL', () => {
     fixture.detectChanges();
-    expect(component['fallbackUrl']).toBe('https://cal.com/tu-usuario/30min');
+    expect(component['fallbackUrl']).toBe('https://cal.com/juanmopy/30min');
   });
 
   it('should show loading state initially', () => {
@@ -61,7 +61,7 @@ describe('CalendarEmbedComponent', () => {
     const link = fixture.nativeElement.querySelector(
       '.calendar-embed__fallback-link',
     ) as HTMLAnchorElement;
-    expect(link.href).toBe('https://cal.com/tu-usuario/30min');
+    expect(link.href).toBe('https://cal.com/juanmopy/30min');
     expect(link.rel).toBe('noopener noreferrer');
     expect(link.target).toBe('_blank');
   });
@@ -88,6 +88,6 @@ describe('CalendarEmbedComponent', () => {
   it('should set data-cal-link attribute', () => {
     fixture.detectChanges();
     const embed = fixture.nativeElement.querySelector('#cal-embed') as HTMLElement;
-    expect(embed?.getAttribute('data-cal-link')).toBe('tu-usuario/30min');
+    expect(embed?.getAttribute('data-cal-link')).toBe('juanmopy/30min');
   });
 });
