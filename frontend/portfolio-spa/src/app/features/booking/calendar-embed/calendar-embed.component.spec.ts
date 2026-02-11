@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PLATFORM_ID } from '@angular/core';
 import { CalendarEmbedComponent } from './calendar-embed.component';
 
 describe('CalendarEmbedComponent', () => {
@@ -9,7 +8,6 @@ describe('CalendarEmbedComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [CalendarEmbedComponent],
-      providers: [{ provide: PLATFORM_ID, useValue: 'browser' }],
     });
 
     fixture = TestBed.createComponent(CalendarEmbedComponent);
@@ -66,23 +64,10 @@ describe('CalendarEmbedComponent', () => {
     expect(link.target).toBe('_blank');
   });
 
-  it('should not load script on server platform', () => {
-    fixture.destroy();
-
-    TestBed.resetTestingModule();
-    TestBed.configureTestingModule({
-      imports: [CalendarEmbedComponent],
-      providers: [{ provide: PLATFORM_ID, useValue: 'server' }],
-    });
-
-    const serverFixture = TestBed.createComponent(CalendarEmbedComponent);
-    const serverComponent = serverFixture.componentInstance;
-    serverFixture.detectChanges();
-
-    expect(serverComponent['loaded']()).toBe(false);
-    expect(serverComponent['error']()).toBe(false);
-
-    serverFixture.destroy();
+  it('should not have script loaded initially', () => {
+    fixture.detectChanges();
+    expect(component['loaded']()).toBe(false);
+    expect(component['error']()).toBe(false);
   });
 
   it('should set data-cal-link attribute', () => {

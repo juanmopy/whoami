@@ -2,7 +2,7 @@
   @if (error()) {
     <div class="calendar-embed__fallback">
       <p class="calendar-embed__fallback-text">
-        No se pudo cargar el calendario. Puedes agendar directamente:
+        {{ 'booking.calendarError' | translate }}
       </p>
       <a
         [href]="fallbackUrl"
@@ -10,20 +10,18 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        Agendar en Cal.com
+        {{ 'booking.fallback' | translate }}
       </a>
     </div>
   } @else {
-    <div
-      #embedContainer
-      id="cal-embed"
-      class="calendar-embed__container"
-      [attr.data-cal-link]="calLink()"
-    ></div>
+    <div id="cal-embed" class="calendar-embed__container" [attr.data-cal-link]="calLink()"></div>
     @if (!loaded()) {
-      <div class="calendar-embed__loading" aria-label="Cargando calendario">
+      <div
+        class="calendar-embed__loading"
+        [attr.aria-label]="'booking.loadingCalendar' | translate"
+      >
         <div class="calendar-embed__spinner"></div>
-        <p>Cargando calendario...</p>
+        <p>{{ 'booking.loadingCalendar' | translate }}</p>
       </div>
     }
   }
