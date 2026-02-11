@@ -28,7 +28,12 @@ export class I18nService {
   readonly isSpanish = computed(() => this._currentLang() === 'es');
 
   constructor() {
-    this.loadTranslations(this._currentLang());
+    if (isPlatformBrowser(this.platformId)) {
+      this.loadTranslations(this._currentLang());
+    } else {
+      // During SSR/prerender: skip HTTP call to avoid blocking stability
+      this._loaded.set(true);
+    }
   }
 
   setLanguage(lang: Language): void {
@@ -39,9 +44,8 @@ export class I18nService {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem(STORAGE_KEY, lang);
       document.documentElement.lang = lang;
+      this.loadTranslations(lang);
     }
-
-    this.loadTranslations(lang);
   }
 
   toggleLanguage(): void {
