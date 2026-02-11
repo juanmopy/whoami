@@ -1,7 +1,8 @@
-import { Injectable, inject, signal, computed, PLATFORM_ID, DestroyRef } from '@angular/core';
+import { Injectable, inject, signal, computed, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+
+import esTranslations from '../../../assets/i18n/es.json';
+import enTranslations from '../../../assets/i18n/en.json';
 
 type Language = 'en' | 'es';
 
@@ -13,38 +14,32 @@ const SUPPORTED_LANGUAGES: Language[] = ['en', 'es'];
 const DEFAULT_LANGUAGE: Language = 'es';
 const STORAGE_KEY = 'portfolio-lang';
 
+const TRANSLATIONS: Record<Language, TranslationMap> = {
+  es: esTranslations as unknown as TranslationMap,
+  en: enTranslations as unknown as TranslationMap,
+};
+
 @Injectable({ providedIn: 'root' })
 export class I18nService {
-  private readonly http = inject(HttpClient);
   private readonly platformId = inject(PLATFORM_ID);
-  private readonly destroyRef = inject(DestroyRef);
 
   private readonly _currentLang = signal<Language>(this.detectLanguage());
-  private readonly _translations = signal<TranslationMap>({});
-  private readonly _loaded = signal(false);
+  private readonly _translations = signal<TranslationMap>(TRANSLATIONS[this.detectLanguage()]);
+  private readonly _loaded = signal(true);
 
   readonly currentLang = this._currentLang.asReadonly();
   readonly loaded = this._loaded.asReadonly();
   readonly isSpanish = computed(() => this._currentLang() === 'es');
 
-  constructor() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.loadTranslations(this._currentLang());
-    } else {
-      // During SSR/prerender: skip HTTP call to avoid blocking stability
-      this._loaded.set(true);
-    }
-  }
-
   setLanguage(lang: Language): void {
     if (!SUPPORTED_LANGUAGES.includes(lang)) return;
 
     this._currentLang.set(lang);
+    this._translations.set(TRANSLATIONS[lang]);
 
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem(STORAGE_KEY, lang);
       document.documentElement.lang = lang;
-      this.loadTranslations(lang);
     }
   }
 
@@ -78,21 +73,5 @@ export class I18nService {
     }
 
     return DEFAULT_LANGUAGE;
-  }
-
-  private loadTranslations(lang: Language): void {
-    this.http
-      .get<TranslationMap>(`assets/i18n/${lang}.json`)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe({
-        next: (translations) => {
-          this._translations.set(translations);
-          this._loaded.set(true);
-        },
-        error: () => {
-          this._translations.set({});
-          this._loaded.set(true);
-        },
-      });
   }
 }

@@ -69,7 +69,7 @@ describe('HeroComponent', () => {
     it('should render the name heading', () => {
       const h1 = fixture.nativeElement.querySelector('.hero__name') as HTMLElement;
       expect(h1).toBeTruthy();
-      expect(h1.textContent?.trim()).toBe('hero.name');
+      expect(h1.textContent?.trim()).toBe('Juan Enrique Morales Castro');
     });
 
     it('should render CTA buttons', () => {
@@ -77,8 +77,8 @@ describe('HeroComponent', () => {
         '.hero__btn',
       ) as NodeListOf<HTMLElement>;
       expect(buttons.length).toBe(2);
-      expect(buttons[0].textContent?.trim()).toBe('hero.cta.projects');
-      expect(buttons[1].textContent?.trim()).toBe('hero.cta.contact');
+      expect(buttons[0].textContent?.trim()).toBe('View Projects');
+      expect(buttons[1].textContent?.trim()).toBe('Contact Me');
     });
 
     it('should render scroll indicator with aria-label', () => {
@@ -86,7 +86,7 @@ describe('HeroComponent', () => {
         '.hero__scroll-indicator',
       ) as HTMLElement;
       expect(scrollBtn).toBeTruthy();
-      expect(scrollBtn.getAttribute('aria-label')).toBe('hero.scrollDown');
+      expect(scrollBtn.getAttribute('aria-label')).toBe('Scroll to next section');
     });
 
     it('should render 6 particle elements', () => {

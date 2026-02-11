@@ -46,7 +46,7 @@ describe('BookingComponent', () => {
 
   it('should render title', () => {
     const title = fixture.nativeElement.querySelector('.booking__title') as HTMLElement;
-    expect(title.textContent?.trim()).toBe('booking.title');
+    expect(title.textContent?.trim()).toBe('Book a Meeting');
   });
 
   it('should render two meeting type options', () => {
@@ -60,14 +60,14 @@ describe('BookingComponent', () => {
     const titles = fixture.nativeElement.querySelectorAll(
       '.booking__option-title',
     ) as NodeListOf<HTMLElement>;
-    expect(titles[0].textContent?.trim()).toBe('booking.intro.title');
+    expect(titles[0].textContent?.trim()).toBe('Intro');
   });
 
   it('should display Consultoría option', () => {
     const titles = fixture.nativeElement.querySelectorAll(
       '.booking__option-title',
     ) as NodeListOf<HTMLElement>;
-    expect(titles[1].textContent?.trim()).toBe('booking.consulting.title');
+    expect(titles[1].textContent?.trim()).toBe('Consulting');
   });
 
   it('should have Intro selected by default', () => {
@@ -75,9 +75,7 @@ describe('BookingComponent', () => {
       '.booking__option--selected',
     ) as HTMLElement;
     expect(selected).toBeTruthy();
-    expect(selected.querySelector('.booking__option-title')?.textContent?.trim()).toBe(
-      'booking.intro.title',
-    );
+    expect(selected.querySelector('.booking__option-title')?.textContent?.trim()).toBe('Intro');
   });
 
   it('should select Consultoría when clicked', () => {
@@ -91,7 +89,7 @@ describe('BookingComponent', () => {
       '.booking__option--selected',
     ) as HTMLElement;
     expect(selected.querySelector('.booking__option-title')?.textContent?.trim()).toBe(
-      'booking.consulting.title',
+      'Consulting',
     );
   });
 
