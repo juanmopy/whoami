@@ -61,7 +61,7 @@ export class CalendarEmbedComponent {
     }
 
     const script = document.createElement('script');
-    script.src = 'https://app.cal.com/embed/embed.js';
+    script.src = 'https://cal.com/embed/embed.js';
     script.async = true;
 
     script.onload = () => {
@@ -90,11 +90,10 @@ export class CalendarEmbedComponent {
   private initCal(calLink: string): void {
     const Cal = this.getCalFunction();
     if (Cal) {
-      Cal('init', { origin: 'https://app.cal.com' });
+      Cal('init', { origin: 'https://cal.com' });
       Cal('inline', {
         elementOrSelector: '#cal-embed',
         calLink,
-        layout: 'month_view',
       });
     }
   }
