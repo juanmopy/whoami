@@ -93,8 +93,8 @@ describe('BookingComponent', () => {
     );
   });
 
-  it('should update calLink when meeting type changes', () => {
-    expect(component['activeCalLink']()).toBe('juanmopy/30min');
+  it('should update selected type when clicked', () => {
+    expect(component['selectedType']().calLink).toBe('juanmopy/30min');
 
     const options = fixture.nativeElement.querySelectorAll(
       '.booking__option',
@@ -102,19 +102,28 @@ describe('BookingComponent', () => {
     options[1].click();
     fixture.detectChanges();
 
-    expect(component['activeCalLink']()).toBe('juanmopy/60min');
+    expect(component['selectedType']().calLink).toBe('juanmopy/60min');
   });
 
-  it('should have aria-pressed on selected option', () => {
+  it('should have data-cal-link on options', () => {
     const options = fixture.nativeElement.querySelectorAll(
       '.booking__option',
     ) as NodeListOf<HTMLButtonElement>;
-    expect(options[0].getAttribute('aria-pressed')).toBe('true');
-    expect(options[1].getAttribute('aria-pressed')).toBe('false');
+    expect(options[0].getAttribute('data-cal-link')).toBe('juanmopy/30min');
+    expect(options[1].getAttribute('data-cal-link')).toBe('juanmopy/60min');
   });
 
-  it('should include calendar embed component', () => {
-    const embed = fixture.nativeElement.querySelector('app-calendar-embed');
-    expect(embed).toBeTruthy();
+  it('should have data-cal-namespace on options', () => {
+    const options = fixture.nativeElement.querySelectorAll(
+      '.booking__option',
+    ) as NodeListOf<HTMLButtonElement>;
+    expect(options[0].getAttribute('data-cal-namespace')).toBe('30min');
+    expect(options[1].getAttribute('data-cal-namespace')).toBe('60min');
+  });
+
+  it('should have data-cal-config on options', () => {
+    const option = fixture.nativeElement.querySelector('.booking__option') as HTMLButtonElement;
+    const config = JSON.parse(option.getAttribute('data-cal-config') ?? '{}');
+    expect(config.layout).toBe('month_view');
   });
 });

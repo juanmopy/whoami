@@ -8,7 +8,6 @@
     <div
       class="booking__options"
       appAnimateOnScroll
-      role="radiogroup"
       [attr.aria-label]="'booking.meetingType' | translate"
     >
       @for (type of meetingTypes; track type.id) {
@@ -16,7 +15,9 @@
           type="button"
           class="booking__option"
           [class.booking__option--selected]="selectedType().id === type.id"
-          [attr.aria-pressed]="selectedType().id === type.id"
+          [attr.data-cal-link]="type.calLink"
+          [attr.data-cal-namespace]="type.namespace"
+          [attr.data-cal-config]="calConfig"
           (click)="selectType(type)"
         >
           <h3 class="booking__option-title">{{ type.titleKey | translate }}</h3>
@@ -25,7 +26,5 @@
         </button>
       }
     </div>
-
-    <app-calendar-embed [calLink]="activeCalLink()" />
   </div>
 </section>
