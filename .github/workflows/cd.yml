@@ -24,8 +24,10 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
       - run: npm ci
-      - run: npx ng build --configuration=production --base-href /whoami/
+      - run: npx ng build --configuration=production
         working-directory: frontend/portfolio-spa
+      - name: Set base href for GitHub Pages
+        run: find frontend/portfolio-spa/dist/portfolio-spa/browser -name '*.html' -exec sed -i 's|<base href="/">|<base href="/whoami/">|g' {} +
       - name: Create 404.html for SPA routing
         run: cp frontend/portfolio-spa/dist/portfolio-spa/browser/index.html frontend/portfolio-spa/dist/portfolio-spa/browser/404.html
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
