@@ -83,7 +83,7 @@ describe('ProjectFilterComponent', () => {
 
     const clearBtn = fixture.nativeElement.querySelector('.filter__clear') as HTMLElement;
     expect(clearBtn).toBeTruthy();
-    expect(clearBtn.textContent?.trim()).toBe('Limpiar filtros');
+    expect(clearBtn.textContent?.trim()).toBe('portfolio.clearFilters');
   });
 
   it('should hide clear button when no tags selected', () => {

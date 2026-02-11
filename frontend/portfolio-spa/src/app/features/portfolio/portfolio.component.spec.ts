@@ -150,7 +150,7 @@ describe('PortfolioComponent', () => {
 
     const empty = fixture.nativeElement.querySelector('.portfolio__empty') as HTMLElement;
     expect(empty).toBeTruthy();
-    expect(empty.textContent).toContain('No se encontraron proyectos');
+    expect(empty.textContent).toContain('portfolio.empty');
   });
 
   it('should open detail modal when card emits viewDetail', () => {

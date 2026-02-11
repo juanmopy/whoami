@@ -53,7 +53,7 @@ describe('FooterComponent', () => {
   it('should have back to top button', () => {
     const button = fixture.nativeElement.querySelector('.footer__back-to-top');
     expect(button).toBeTruthy();
-    expect(button.getAttribute('aria-label')).toBe('Back to top');
+    expect(button.getAttribute('aria-label')).toBe('footer.backToTop');
   });
 
   it('should have aria-labels on all social links', () => {

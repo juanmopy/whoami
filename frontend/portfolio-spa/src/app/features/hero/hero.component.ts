@@ -14,6 +14,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { interval } from 'rxjs';
+import { TranslatePipe } from '@shared/pipes/translate.pipe';
 
 const TAGLINES: readonly string[] = [
   'Full Stack Developer',
@@ -30,7 +31,7 @@ const PAUSE_BEFORE_TYPE_MS = 500;
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, TranslatePipe],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

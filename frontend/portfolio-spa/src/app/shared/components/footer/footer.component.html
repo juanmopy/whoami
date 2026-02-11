@@ -5,7 +5,7 @@
         <a
           class="footer__social-link"
           [href]="link.url"
-          [attr.aria-label]="link.ariaLabel"
+          [attr.aria-label]="link.ariaLabel | translate"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -23,12 +23,14 @@
       }
     </div>
 
-    <p class="footer__copyright">&copy; {{ currentYear() }} Portfolio. All rights reserved.</p>
+    <p class="footer__copyright">
+      &copy; {{ currentYear() }} Juan Enrique Morales Castro. {{ 'footer.copyright' | translate }}
+    </p>
 
     <button
       type="button"
       class="footer__back-to-top"
-      aria-label="Back to top"
+      [attr.aria-label]="'footer.backToTop' | translate"
       (click)="scrollToTop()"
     >
       <svg
@@ -45,7 +47,7 @@
       >
         <polyline points="18 15 12 9 6 15" />
       </svg>
-      <span>Back to top</span>
+      <span>{{ 'footer.backToTop' | translate }}</span>
     </button>
   </div>
 </footer>

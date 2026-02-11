@@ -1,6 +1,6 @@
 <section class="portfolio" id="portfolio">
   <div class="portfolio__container">
-    <h2 class="portfolio__title" appAnimateOnScroll>Portafolio</h2>
+    <h2 class="portfolio__title" appAnimateOnScroll>{{ 'portfolio.title' | translate }}</h2>
 
     @if (allTags().length > 0) {
       <app-project-filter
@@ -18,7 +18,7 @@
           appAnimateOnScroll
         />
       } @empty {
-        <p class="portfolio__empty">No se encontraron proyectos con los filtros seleccionados.</p>
+        <p class="portfolio__empty">{{ 'portfolio.empty' | translate }}</p>
       }
     </div>
   </div>
@@ -33,7 +33,7 @@
       role="dialog"
       aria-modal="true"
       tabindex="0"
-      [attr.aria-label]="'Project detail: ' + project.title"
+      [attr.aria-label]="('portfolio.projectDetail' | translate) + ' ' + project.title"
     >
       <article
         class="portfolio__modal"
@@ -46,7 +46,7 @@
           type="button"
           class="portfolio__modal-close"
           (click)="closeDetail()"
-          aria-label="Close detail"
+          [attr.aria-label]="'portfolio.closeDetail' | translate"
         >
           &times;
         </button>
@@ -78,7 +78,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Ver Demo
+                {{ 'portfolio.viewDemo' | translate }}
               </a>
             }
             @if (project.repoUrl) {
@@ -88,7 +88,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Ver Código
+                {{ 'portfolio.viewCode' | translate }}
               </a>
             }
           </div>

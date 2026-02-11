@@ -4,10 +4,13 @@
     "about": "About Me",
     "portfolio": "Portfolio",
     "contact": "Contact",
-    "booking": "Book a Meeting"
+    "booking": "Book a Meeting",
+    "toggleMenu": "Toggle navigation menu",
+    "brand": "Portfolio"
   },
   "hero": {
-    "name": "Your Name",
+    "name": "Juan Enrique Morales Castro",
+    "photoAlt": "Profile photo",
     "cta": {
       "projects": "View Projects",
       "contact": "Contact Me"
@@ -16,6 +19,7 @@
   },
   "about": {
     "title": "About Me",
+    "description": "Full stack developer with 4+ years of experience building enterprise applications for the banking and consulting industries. Specialized in Angular, TypeScript, and Node.js, with hands-on experience in serverless architectures (AWS Lambda), process automation (RPA), and CI/CD pipelines. Currently leading development teams at TCS, setting technical standards and delivering scalable solutions.",
     "skills": "Skills",
     "experience": "Experience"
   },
@@ -23,9 +27,18 @@
     "title": "Portfolio",
     "filterAll": "All",
     "viewDetail": "View detail",
+    "viewDetailsFor": "View details for",
+    "projectDetail": "Project detail:",
     "demo": "Demo",
+    "liveDemo": "Live demo",
     "code": "Code",
-    "close": "Close"
+    "sourceCode": "Source code",
+    "close": "Close",
+    "closeDetail": "Close detail",
+    "viewDemo": "View Demo",
+    "viewCode": "View Code",
+    "empty": "No projects found with the selected filters.",
+    "clearFilters": "Clear filters"
   },
   "contact": {
     "title": "Get in Touch",
@@ -36,9 +49,17 @@
     "message": "Message",
     "send": "Send Message",
     "sending": "Sending...",
-    "success": "Message sent! I'll get back to you shortly.",
+    "success": "Message sent successfully! I'll get back to you shortly.",
+    "sendAnother": "Send another message",
     "error": "There was an error sending the message. Please try again.",
     "rateLimit": "Too many submissions. Please wait before sending again.",
+    "honeypot": "Do not fill",
+    "placeholder": {
+      "name": "Your name",
+      "email": "you@email.com",
+      "subject": "Message subject",
+      "message": "Tell me about your project..."
+    },
     "validation": {
       "required": "This field is required",
       "minLength": "Must be at least {{min}} characters",
@@ -47,18 +68,36 @@
   },
   "booking": {
     "title": "Book a Meeting",
-    "subtitle": "Choose a time slot that works for you",
-    "intro": "Intro Call — 30 min",
-    "consulting": "Consulting — 60 min",
-    "fallback": "Book directly on Cal.com"
+    "subtitle": "Choose the type of meeting and select a time slot that works for you.",
+    "meetingType": "Meeting type",
+    "intro": {
+      "title": "Intro",
+      "duration": "30 minutes",
+      "description": "Initial conversation to learn about your project and see how I can help."
+    },
+    "consulting": {
+      "title": "Consulting",
+      "duration": "60 minutes",
+      "description": "In-depth session to review architecture, code, or plan a project."
+    },
+    "fallback": "Book on Cal.com",
+    "calendarError": "Could not load the calendar. You can book directly:",
+    "loadingCalendar": "Loading calendar..."
   },
   "footer": {
     "backToTop": "Back to top",
-    "copyright": "All rights reserved."
+    "copyright": "All rights reserved.",
+    "social": {
+      "github": "Visit GitHub profile",
+      "linkedin": "Visit LinkedIn profile",
+      "x": "Visit X profile",
+      "email": "Send an email"
+    }
   },
   "common": {
     "loading": "Loading...",
     "darkMode": "Switch to dark mode",
-    "lightMode": "Switch to light mode"
+    "lightMode": "Switch to light mode",
+    "proficiency": "proficiency:"
   }
 }

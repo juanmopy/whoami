@@ -12,7 +12,7 @@
     <div class="hero__photo-wrapper">
       <img
         src="assets/images/profile.webp"
-        alt="Profile photo"
+        alt="{{ 'hero.photoAlt' | translate }}"
         class="hero__photo"
         width="200"
         height="200"
@@ -21,7 +21,7 @@
       />
     </div>
 
-    <h1 class="hero__name">Juan Enrique Morales Castro</h1>
+    <h1 class="hero__name">{{ 'hero.name' | translate }}</h1>
 
     <div class="hero__tagline" aria-live="polite" aria-label="Typed tagline">
       <span class="hero__tagline-text">{{ displayText() }}</span>
@@ -31,8 +31,12 @@
     </div>
 
     <div class="hero__cta">
-      <a class="hero__btn hero__btn--primary" routerLink="/portfolio"> Ver Proyectos </a>
-      <a class="hero__btn hero__btn--secondary" routerLink="/contact"> Contactar </a>
+      <a class="hero__btn hero__btn--primary" routerLink="/portfolio">
+        {{ 'hero.cta.projects' | translate }}
+      </a>
+      <a class="hero__btn hero__btn--secondary" routerLink="/contact">
+        {{ 'hero.cta.contact' | translate }}
+      </a>
     </div>
   </div>
 
@@ -42,7 +46,7 @@
     class="hero__scroll-indicator"
     [class.hero__scroll-indicator--static]="prefersReducedMotion()"
     (click)="scrollDown()"
-    aria-label="Scroll to next section"
+    [attr.aria-label]="'hero.scrollDown' | translate"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,18 +1,18 @@
 <section class="contact" id="contact">
   <div class="contact__container">
-    <h2 class="contact__title" appAnimateOnScroll>Contacto</h2>
-    <p class="contact__subtitle" appAnimateOnScroll>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+    <h2 class="contact__title" appAnimateOnScroll>{{ 'contact.title' | translate }}</h2>
+    <p class="contact__subtitle" appAnimateOnScroll>{{ 'contact.subtitle' | translate }}</p>
 
     @if (contactService.status() === 'success') {
       <div class="contact__success" role="alert" appAnimateOnScroll>
         <span class="contact__success-icon" aria-hidden="true">✓</span>
-        <p>¡Mensaje enviado con éxito! Te responderé pronto.</p>
+        <p>{{ 'contact.success' | translate }}</p>
         <button
           type="button"
           class="contact__btn contact__btn--secondary"
           (click)="contactService.resetStatus()"
         >
-          Enviar otro mensaje
+          {{ 'contact.sendAnother' | translate }}
         </button>
       </div>
     } @else {
@@ -25,7 +25,7 @@
       >
         <!-- Honeypot — hidden from real users -->
         <div class="contact__honeypot" aria-hidden="true">
-          <label for="honeypot">No llenar</label>
+          <label for="honeypot">{{ 'contact.honeypot' | translate }}</label>
           <input
             id="honeypot"
             formControlName="honeypot"
@@ -36,13 +36,13 @@
         </div>
 
         <div class="contact__field">
-          <label class="contact__label" for="name">Nombre</label>
+          <label class="contact__label" for="name">{{ 'contact.name' | translate }}</label>
           <input
             id="name"
             class="contact__input"
             formControlName="name"
             type="text"
-            placeholder="Tu nombre"
+            [attr.placeholder]="'contact.placeholder.name' | translate"
             autocomplete="name"
             [attr.aria-invalid]="hasError('name')"
             [attr.aria-describedby]="hasError('name') ? 'name-error' : null"
@@ -55,7 +55,7 @@
         </div>
 
         <div class="contact__field">
-          <label class="contact__label" for="email">Email</label>
+          <label class="contact__label" for="email">{{ 'contact.email' | translate }}</label>
           <input
             id="email"
             class="contact__input"
@@ -74,13 +74,13 @@
         </div>
 
         <div class="contact__field">
-          <label class="contact__label" for="subject">Asunto</label>
+          <label class="contact__label" for="subject">{{ 'contact.subject' | translate }}</label>
           <input
             id="subject"
             class="contact__input"
             formControlName="subject"
             type="text"
-            placeholder="Asunto del mensaje"
+            [attr.placeholder]="'contact.placeholder.subject' | translate"
             [attr.aria-invalid]="hasError('subject')"
             [attr.aria-describedby]="hasError('subject') ? 'subject-error' : null"
           />
@@ -92,12 +92,12 @@
         </div>
 
         <div class="contact__field">
-          <label class="contact__label" for="message">Mensaje</label>
+          <label class="contact__label" for="message">{{ 'contact.message' | translate }}</label>
           <textarea
             id="message"
             class="contact__textarea"
             formControlName="message"
-            placeholder="Cuéntame sobre tu proyecto..."
+            [attr.placeholder]="'contact.placeholder.message' | translate"
             rows="5"
             [attr.aria-invalid]="hasError('message')"
             [attr.aria-describedby]="hasError('message') ? 'message-error' : null"
@@ -122,9 +122,9 @@
         >
           @if (contactService.status() === 'sending') {
             <span class="contact__spinner" aria-hidden="true"></span>
-            Enviando...
+            {{ 'contact.sending' | translate }}
           } @else {
-            Enviar mensaje
+            {{ 'contact.send' | translate }}
           }
         </button>
       </form>

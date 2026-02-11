@@ -1,7 +1,9 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { TranslatePipe } from '@shared/pipes/translate.pipe';
 
 @Component({
   selector: 'app-project-filter',
+  imports: [TranslatePipe],
   templateUrl: './project-filter.component.html',
   styleUrl: './project-filter.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

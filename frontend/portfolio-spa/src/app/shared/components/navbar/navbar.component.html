@@ -5,7 +5,7 @@
   aria-label="Main navigation"
 >
   <div class="navbar__container">
-    <a class="navbar__brand" routerLink="/"> Portafolio </a>
+    <a class="navbar__brand" routerLink="/"> {{ 'nav.brand' | translate }} </a>
 
     <!-- Desktop nav -->
     <ul class="navbar__links" role="menubar">
@@ -17,7 +17,7 @@
             [routerLink]="link.path"
             routerLinkActive="navbar__link--active"
           >
-            {{ link.label }}
+            {{ link.label | translate }}
           </a>
         </li>
       }
@@ -25,7 +25,7 @@
 
     <div class="navbar__actions">
       <a class="navbar__cta" routerLink="/booking" routerLinkActive="navbar__cta--active">
-        Agendar
+        {{ 'nav.booking' | translate }}
       </a>
 
       <app-theme-toggle />
@@ -36,7 +36,7 @@
         type="button"
         [attr.aria-expanded]="isMenuOpen()"
         aria-controls="mobile-menu"
-        aria-label="Toggle navigation menu"
+        [attr.aria-label]="'nav.toggleMenu' | translate"
         (click)="toggleMenu()"
       >
         <span class="navbar__hamburger-line" [class.open]="isMenuOpen()"></span>
@@ -57,7 +57,7 @@
           routerLinkActive="navbar__mobile-link--active"
           (click)="closeMenu()"
         >
-          {{ link.label }}
+          {{ link.label | translate }}
         </a>
       }
       <a
@@ -67,7 +67,7 @@
         routerLinkActive="navbar__mobile-cta--active"
         (click)="closeMenu()"
       >
-        Agendar
+        {{ 'nav.booking' | translate }}
       </a>
     </div>
   }

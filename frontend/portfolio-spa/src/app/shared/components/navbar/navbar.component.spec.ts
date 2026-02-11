@@ -39,7 +39,7 @@ describe('NavbarComponent', () => {
   it('should render brand link', () => {
     const brand = fixture.nativeElement.querySelector('.navbar__brand');
     expect(brand).toBeTruthy();
-    expect(brand.textContent.trim()).toBe('Portafolio');
+    expect(brand.textContent.trim()).toBe('nav.brand');
   });
 
   it('should render navigation links', () => {
@@ -101,7 +101,7 @@ describe('NavbarComponent', () => {
     const cta = fixture.nativeElement.querySelector('.navbar__cta');
     expect(cta).toBeTruthy();
     expect(cta.getAttribute('href')).toBe('/booking');
-    expect(cta.textContent.trim()).toBe('Agendar');
+    expect(cta.textContent.trim()).toBe('nav.booking');
   });
 
   it('should render mobile CTA in open mobile menu', () => {
@@ -112,6 +112,6 @@ describe('NavbarComponent', () => {
     const mobileCta = fixture.nativeElement.querySelector('.navbar__mobile-cta');
     expect(mobileCta).toBeTruthy();
     expect(mobileCta.getAttribute('href')).toBe('/booking');
-    expect(mobileCta.textContent.trim()).toBe('Agendar');
+    expect(mobileCta.textContent.trim()).toBe('nav.booking');
   });
 });

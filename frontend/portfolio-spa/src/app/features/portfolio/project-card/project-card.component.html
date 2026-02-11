@@ -4,7 +4,7 @@
   (keydown.enter)="onViewDetail()"
   tabindex="0"
   role="button"
-  [attr.aria-label]="'View details for ' + project().title"
+  [attr.aria-label]="('portfolio.viewDetailsFor' | translate) + ' ' + project().title"
 >
   <div class="card__image-wrapper">
     <img
@@ -16,7 +16,7 @@
       height="250"
     />
     <div class="card__overlay">
-      <span class="card__overlay-text">Ver detalle</span>
+      <span class="card__overlay-text">{{ 'portfolio.viewDetail' | translate }}</span>
     </div>
   </div>
 
@@ -38,9 +38,9 @@
           target="_blank"
           rel="noopener noreferrer"
           (click)="$event.stopPropagation()"
-          aria-label="Live demo"
+          [attr.aria-label]="'portfolio.liveDemo' | translate"
         >
-          Demo
+          {{ 'portfolio.demo' | translate }}
         </a>
       }
       @if (project().repoUrl) {
@@ -50,9 +50,9 @@
           target="_blank"
           rel="noopener noreferrer"
           (click)="$event.stopPropagation()"
-          aria-label="Source code"
+          [attr.aria-label]="'portfolio.sourceCode' | translate"
         >
-          Código
+          {{ 'portfolio.code' | translate }}
         </a>
       }
     </div>

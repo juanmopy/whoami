@@ -12,11 +12,12 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { ProjectFilterComponent } from './project-filter/project-filter.component';
 import { AnimateOnScrollDirective } from '@shared/directives/animate-on-scroll.directive';
+import { TranslatePipe } from '@shared/pipes/translate.pipe';
 import { Project } from '@models/index';
 
 @Component({
   selector: 'app-portfolio',
-  imports: [ProjectCardComponent, ProjectFilterComponent, AnimateOnScrollDirective],
+  imports: [ProjectCardComponent, ProjectFilterComponent, AnimateOnScrollDirective, TranslatePipe],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

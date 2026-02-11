@@ -61,13 +61,13 @@ describe('ThemeToggleComponent', () => {
     themeSignal.set('light');
     fixture.detectChanges();
     const button = fixture.nativeElement.querySelector('button');
-    expect(button.getAttribute('aria-label')).toBe('Switch to dark mode');
+    expect(button.getAttribute('aria-label')).toBe('common.darkMode');
   });
 
   it('should have correct aria-label for dark mode', () => {
     themeSignal.set('dark');
     fixture.detectChanges();
     const button = fixture.nativeElement.querySelector('button');
-    expect(button.getAttribute('aria-label')).toBe('Switch to light mode');
+    expect(button.getAttribute('aria-label')).toBe('common.lightMode');
   });
 });

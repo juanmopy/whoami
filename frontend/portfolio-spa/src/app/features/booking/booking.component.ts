@@ -1,36 +1,36 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { CalendarEmbedComponent } from './calendar-embed/calendar-embed.component';
 import { AnimateOnScrollDirective } from '@shared/directives/animate-on-scroll.directive';
+import { TranslatePipe } from '@shared/pipes/translate.pipe';
 
 export interface MeetingType {
   readonly id: string;
-  readonly title: string;
-  readonly duration: string;
-  readonly description: string;
+  readonly titleKey: string;
+  readonly durationKey: string;
+  readonly descriptionKey: string;
   readonly calLink: string;
 }
 
 const MEETING_TYPES: readonly MeetingType[] = [
   {
     id: 'intro',
-    title: 'Intro',
-    duration: '30 minutos',
-    description: 'Conversación inicial para conocer tu proyecto y ver cómo puedo ayudarte.',
+    titleKey: 'booking.intro.title',
+    durationKey: 'booking.intro.duration',
+    descriptionKey: 'booking.intro.description',
     calLink: 'juanmopy/30min',
   },
   {
     id: 'consulting',
-    title: 'Consultoría',
-    duration: '60 minutos',
-    description:
-      'Sesión en profundidad para revisar arquitectura, código o planificar un proyecto.',
+    titleKey: 'booking.consulting.title',
+    durationKey: 'booking.consulting.duration',
+    descriptionKey: 'booking.consulting.description',
     calLink: 'juanmopy/60min',
   },
 ];
 
 @Component({
   selector: 'app-booking',
-  imports: [CalendarEmbedComponent, AnimateOnScrollDirective],
+  imports: [CalendarEmbedComponent, AnimateOnScrollDirective, TranslatePipe],
   templateUrl: './booking.component.html',
   styleUrl: './booking.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

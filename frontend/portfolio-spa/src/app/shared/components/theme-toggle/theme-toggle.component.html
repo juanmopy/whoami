@@ -2,7 +2,9 @@
   type="button"
   class="theme-toggle"
   (click)="toggle()"
-  [attr.aria-label]="currentTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+  [attr.aria-label]="
+    currentTheme() === 'dark' ? ('common.lightMode' | translate) : ('common.darkMode' | translate)
+  "
 >
   <span class="theme-toggle__icon" aria-hidden="true">
     @if (currentTheme() === 'dark') {

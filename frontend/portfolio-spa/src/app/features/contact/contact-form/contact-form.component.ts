@@ -3,10 +3,11 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ContactService } from '@core/index';
 import { AnimateOnScrollDirective } from '@shared/directives/animate-on-scroll.directive';
+import { TranslatePipe } from '@shared/pipes/translate.pipe';
 
 @Component({
   selector: 'app-contact-form',
-  imports: [ReactiveFormsModule, AnimateOnScrollDirective],
+  imports: [ReactiveFormsModule, AnimateOnScrollDirective, TranslatePipe],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

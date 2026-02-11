@@ -105,7 +105,7 @@ describe('AboutComponent', () => {
     fixture.detectChanges();
 
     const title = fixture.nativeElement.querySelector('.about__title') as HTMLElement;
-    expect(title.textContent?.trim()).toBe('Sobre Mí');
+    expect(title.textContent?.trim()).toBe('about.title');
   });
 
   it('should render skill-bar component when skills loaded', () => {

@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostListener, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
+import { TranslatePipe } from '@shared/pipes/translate.pipe';
 import { DOCUMENT } from '@angular/common';
 
 interface NavLink {
@@ -11,7 +12,7 @@ interface NavLink {
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [ThemeToggleComponent, RouterLink, RouterLinkActive],
+  imports: [ThemeToggleComponent, RouterLink, RouterLinkActive, TranslatePipe],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,9 +24,9 @@ export class NavbarComponent {
   protected readonly isScrolled = signal(false);
 
   protected readonly navLinks: NavLink[] = [
-    { label: 'Sobre Mí', path: '/about' },
-    { label: 'Portafolio', path: '/portfolio' },
-    { label: 'Contacto', path: '/contact' },
+    { label: 'nav.about', path: '/about' },
+    { label: 'nav.portfolio', path: '/portfolio' },
+    { label: 'nav.contact', path: '/contact' },
   ];
 
   @HostListener('window:scroll')

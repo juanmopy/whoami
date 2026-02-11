@@ -15,7 +15,9 @@
               [attr.aria-valuenow]="skill.level"
               aria-valuemin="0"
               aria-valuemax="100"
-              [attr.aria-label]="skill.name + ' proficiency: ' + skill.level + '%'"
+              [attr.aria-label]="
+                skill.name + ' ' + ('common.proficiency' | translate) + ' ' + skill.level + '%'
+              "
             >
               <div class="skills__bar-fill" [style.width.%]="skill.level"></div>
             </div>
