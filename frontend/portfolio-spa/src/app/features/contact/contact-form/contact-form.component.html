@@ -61,7 +61,7 @@
             class="contact__input"
             formControlName="email"
             type="email"
-            placeholder="tu@email.com"
+            [attr.placeholder]="'contact.placeholder.email' | translate"
             autocomplete="email"
             [attr.aria-invalid]="hasError('email')"
             [attr.aria-describedby]="hasError('email') ? 'email-error' : null"

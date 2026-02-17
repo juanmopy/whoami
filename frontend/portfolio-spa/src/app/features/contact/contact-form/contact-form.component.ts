@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ContactService } from '@core/index';
+import { I18nService } from '@core/services/i18n.service';
 import { AnimateOnScrollDirective } from '@shared/directives/animate-on-scroll.directive';
 import { TranslatePipe } from '@shared/pipes/translate.pipe';
 
@@ -15,6 +16,7 @@ import { TranslatePipe } from '@shared/pipes/translate.pipe';
 export class ContactFormComponent {
   protected readonly contactService = inject(ContactService);
   private readonly destroyRef = inject(DestroyRef);
+  private readonly i18n = inject(I18nService);
 
   protected readonly submitted = signal(false);
 
@@ -76,14 +78,14 @@ export class ContactFormComponent {
     }
 
     if (control.errors['required']) {
-      return 'Este campo es obligatorio.';
+      return this.i18n.translate('contact.validation.required');
     }
     if (control.errors['minlength']) {
       const min = control.errors['minlength'].requiredLength as number;
-      return `Mínimo ${min} caracteres.`;
+      return this.i18n.translate('contact.validation.minLength').replace('{{min}}', String(min));
     }
     if (control.errors['email']) {
-      return 'Ingresa un email válido.';
+      return this.i18n.translate('contact.validation.email');
     }
     return '';
   }

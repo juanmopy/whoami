@@ -78,6 +78,7 @@
     "success": "Message sent successfully! I'll get back to you shortly.",
     "sendAnother": "Send another message",
     "error": "There was an error sending the message. Please try again.",
+    "networkError": "Network error. Please check your connection.",
     "rateLimit": "Too many submissions. Please wait before sending again.",
     "honeypot": "Do not fill",
     "placeholder": {

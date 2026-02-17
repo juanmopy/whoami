@@ -2,6 +2,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { I18nService } from './i18n.service';
 
 export type ContactStatus = 'idle' | 'sending' | 'success' | 'error';
 
@@ -20,6 +21,7 @@ export interface ContactResponse {
 @Injectable({ providedIn: 'root' })
 export class ContactService {
   private readonly http = inject(HttpClient);
+  private readonly i18n = inject(I18nService);
   private readonly ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
   private readonly MAX_SUBMISSIONS = 3;
   private readonly RATE_WINDOW_MS = 60_000;
@@ -31,7 +33,7 @@ export class ContactService {
   send(data: ContactRequest): Observable<ContactResponse> {
     if (this.isRateLimited()) {
       this.status.set('error');
-      this.errorMessage.set('Demasiados envíos. Intenta de nuevo en un minuto.');
+      this.errorMessage.set(this.i18n.translate('contact.rateLimit'));
       return throwError(() => new Error('Rate limited'));
     }
 
@@ -47,8 +49,8 @@ export class ContactService {
         this.status.set('error');
         this.errorMessage.set(
           error.status === 0
-            ? 'Error de red. Verifica tu conexión.'
-            : 'Error al enviar el mensaje. Intenta más tarde.',
+            ? this.i18n.translate('contact.networkError')
+            : this.i18n.translate('contact.error'),
         );
         return throwError(() => error);
       }),

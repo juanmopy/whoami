@@ -74,7 +74,7 @@ describe('ContactFormComponent', () => {
     fixture.detectChanges();
 
     expect(component['hasError']('email')).toBe(true);
-    expect(component['getError']('email')).toBe('Ingresa un email válido.');
+    expect(component['getError']('email')).toBe('Please enter a valid email address');
   });
 
   it('should validate minlength for name', () => {
@@ -83,7 +83,7 @@ describe('ContactFormComponent', () => {
     fixture.detectChanges();
 
     expect(component['hasError']('name')).toBe(true);
-    expect(component['getError']('name')).toBe('Mínimo 2 caracteres.');
+    expect(component['getError']('name')).toBe('Must be at least 2 characters');
   });
 
   it('should validate minlength for message', () => {
@@ -92,7 +92,7 @@ describe('ContactFormComponent', () => {
     fixture.detectChanges();
 
     expect(component['hasError']('message')).toBe(true);
-    expect(component['getError']('message')).toBe('Mínimo 10 caracteres.');
+    expect(component['getError']('message')).toBe('Must be at least 10 characters');
   });
 
   it('should not submit when form is invalid', () => {
@@ -184,12 +184,12 @@ describe('ContactFormComponent', () => {
 
   it('should show error alert on service error', () => {
     contactService.status.set('error');
-    contactService.errorMessage.set('Error de red.');
+    contactService.errorMessage.set('Network error. Please check your connection.');
     fixture.detectChanges();
 
     const alert = fixture.nativeElement.querySelector('.contact__alert--error') as HTMLElement;
     expect(alert).toBeTruthy();
-    expect(alert.textContent).toContain('Error de red.');
+    expect(alert.textContent).toContain('Network error');
   });
 
   it('should disable submit button while sending', () => {

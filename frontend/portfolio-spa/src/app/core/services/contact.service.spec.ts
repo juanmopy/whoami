@@ -65,7 +65,9 @@ describe('ContactService', () => {
       .flush('Server Error', { status: 500, statusText: 'Internal Server Error' });
 
     expect(service.status()).toBe('error');
-    expect(service.errorMessage()).toBe('Error al enviar el mensaje. Intenta más tarde.');
+    expect(service.errorMessage()).toBe(
+      'There was an error sending the message. Please try again.',
+    );
   });
 
   it('should set network error message on status 0', () => {
@@ -80,7 +82,7 @@ describe('ContactService', () => {
     httpTesting.expectOne('https://formspree.io/f/YOUR_FORM_ID').error(new ProgressEvent('error'));
 
     expect(service.status()).toBe('error');
-    expect(service.errorMessage()).toBe('Error de red. Verifica tu conexión.');
+    expect(service.errorMessage()).toBe('Network error. Please check your connection.');
   });
 
   it('should rate limit after max submissions', () => {
@@ -102,7 +104,7 @@ describe('ContactService', () => {
       });
 
     expect(service.status()).toBe('error');
-    expect(service.errorMessage()).toContain('Demasiados envíos');
+    expect(service.errorMessage()).toContain('Too many submissions');
   });
 
   it('should reset status', () => {
