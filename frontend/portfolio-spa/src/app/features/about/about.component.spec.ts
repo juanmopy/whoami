@@ -15,10 +15,11 @@ const MOCK_SKILLS: SkillCategory[] = [
 
 const MOCK_EXPERIENCES: Experience[] = [
   {
-    title: 'Senior Dev',
-    company: 'Corp',
-    period: '2022 — Present',
-    description: 'Leading projects.',
+    id: 'tcsLead',
+    titleKey: 'experience.tcsLead.title',
+    companyKey: 'experience.tcsLead.company',
+    periodKey: 'experience.tcsLead.period',
+    descriptionKey: 'experience.tcsLead.description',
     tags: ['Angular'],
   },
 ];

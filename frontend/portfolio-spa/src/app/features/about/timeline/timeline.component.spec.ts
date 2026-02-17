@@ -5,17 +5,19 @@ import { Experience } from '@models/index';
 
 const MOCK_EXPERIENCES: Experience[] = [
   {
-    title: 'Senior Developer',
-    company: 'Acme Corp',
-    period: '2022 — Present',
-    description: 'Leading frontend development.',
+    id: 'tcsLead',
+    titleKey: 'experience.tcsLead.title',
+    companyKey: 'experience.tcsLead.company',
+    periodKey: 'experience.tcsLead.period',
+    descriptionKey: 'experience.tcsLead.description',
     tags: ['Angular', 'TypeScript'],
   },
   {
-    title: 'Developer',
-    company: 'Startup Inc',
-    period: '2020 — 2022',
-    description: 'Built microservices.',
+    id: 'tcsDev',
+    titleKey: 'experience.tcsDev.title',
+    companyKey: 'experience.tcsDev.company',
+    periodKey: 'experience.tcsDev.period',
+    descriptionKey: 'experience.tcsDev.description',
     tags: ['Node.js', 'Docker'],
   },
 ];
@@ -82,7 +84,7 @@ describe('TimelineComponent', () => {
     const titles = fixture.nativeElement.querySelectorAll(
       '.timeline__title',
     ) as NodeListOf<HTMLElement>;
-    expect(titles[0].textContent?.trim()).toBe('Senior Developer');
+    expect(titles[0].textContent?.trim()).toBe('Technical Lead');
     expect(titles[1].textContent?.trim()).toBe('Developer');
   });
 
@@ -90,14 +92,14 @@ describe('TimelineComponent', () => {
     const companies = fixture.nativeElement.querySelectorAll(
       '.timeline__company',
     ) as NodeListOf<HTMLElement>;
-    expect(companies[0].textContent?.trim()).toBe('Acme Corp');
+    expect(companies[0].textContent?.trim()).toBe('Tata Consultancy Services TCS');
   });
 
   it('should render period badges', () => {
     const periods = fixture.nativeElement.querySelectorAll(
       '.timeline__period',
     ) as NodeListOf<HTMLElement>;
-    expect(periods[0].textContent?.trim()).toBe('2022 — Present');
+    expect(periods[0].textContent?.trim()).toBe('2025 — Present');
   });
 
   it('should render tags for each experience', () => {
@@ -112,6 +114,6 @@ describe('TimelineComponent', () => {
     const descriptions = fixture.nativeElement.querySelectorAll(
       '.timeline__description',
     ) as NodeListOf<HTMLElement>;
-    expect(descriptions[0].textContent?.trim()).toBe('Leading frontend development.');
+    expect(descriptions[0].textContent?.trim()).toContain('Leading a team');
   });
 });

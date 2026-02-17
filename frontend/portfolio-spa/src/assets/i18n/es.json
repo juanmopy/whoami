@@ -23,6 +23,32 @@
     "skills": "Habilidades",
     "experience": "Experiencia"
   },
+  "experience": {
+    "tcsLead": {
+      "title": "Technical Lead",
+      "company": "Tata Consultancy Services TCS",
+      "period": "2025 — Presente",
+      "description": "Lidero un equipo de desarrolladores en la arquitectura y entrega de aplicaciones web enterprise con Angular y Node.js. Defino estándares técnicos, gestiono pipelines CI/CD y superviso el diseño de bases de datos SQL/NoSQL para clientes de gran escala."
+    },
+    "tcsDev": {
+      "title": "Developer",
+      "company": "Tata Consultancy Services TCS",
+      "period": "2022 — 2025",
+      "description": "Desarrollo de arquitecturas serverless con AWS Lambda y automatización de procesos empresariales con Power Automate para clientes del sector banca. Gestión de ciclos de vida completos del software mediante Azure DevOps."
+    },
+    "kpmgMiddle": {
+      "title": "Desarrollador Middle RPA",
+      "company": "KPMG",
+      "period": "2021 — 2022",
+      "description": "Diseño y desarrollo de bots RPA con Automation Anywhere para automatizar procesos de auditoría y consultoría. Creación de scripts complementarios en Python y JavaScript para integración de datos y generación de reportes."
+    },
+    "kpmgJunior": {
+      "title": "Desarrollador RPA",
+      "company": "KPMG",
+      "period": "2021 — 2021",
+      "description": "Construcción de bots de automatización con Automation Anywhere para tareas repetitivas en procesos bancarios. Modelado de flujos de negocio en Bizagi y consultas SQL para extracción y validación de datos."
+    }
+  },
   "portfolio": {
     "title": "Portafolio",
     "filterAll": "Todos",
