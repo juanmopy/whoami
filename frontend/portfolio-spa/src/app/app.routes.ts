@@ -4,18 +4,18 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('@features/hero/hero.component').then((m) => m.HeroComponent),
-    title: 'Inicio — Portfolio',
+    title: 'pageTitle.home',
   },
   {
     path: 'about',
     loadComponent: () => import('@features/about/about.component').then((m) => m.AboutComponent),
-    title: 'Sobre Mí — Portfolio',
+    title: 'pageTitle.about',
   },
   {
     path: 'portfolio',
     loadComponent: () =>
       import('@features/portfolio/portfolio.component').then((m) => m.PortfolioComponent),
-    title: 'Portfolio — Proyectos',
+    title: 'pageTitle.portfolio',
   },
   {
     path: 'contact',
@@ -23,12 +23,12 @@ export const routes: Routes = [
       import('@features/contact/contact-form/contact-form.component').then(
         (m) => m.ContactFormComponent,
       ),
-    title: 'Contacto — Portfolio',
+    title: 'pageTitle.contact',
   },
   {
     path: 'booking',
     loadComponent: () =>
       import('@features/booking/booking.component').then((m) => m.BookingComponent),
-    title: 'Agendar — Portfolio',
+    title: 'pageTitle.booking',
   },
 ];

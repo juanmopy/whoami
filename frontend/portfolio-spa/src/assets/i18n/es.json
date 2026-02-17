@@ -125,5 +125,12 @@
     "darkMode": "Cambiar a modo oscuro",
     "lightMode": "Cambiar a modo claro",
     "proficiency": "competencia:"
+  },
+  "pageTitle": {
+    "home": "Inicio — Portafolio",
+    "about": "Sobre Mí — Portafolio",
+    "portfolio": "Portafolio — Proyectos",
+    "contact": "Contacto — Portafolio",
+    "booking": "Agendar — Portafolio"
   }
 }

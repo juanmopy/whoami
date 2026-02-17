@@ -125,5 +125,12 @@
     "darkMode": "Switch to dark mode",
     "lightMode": "Switch to light mode",
     "proficiency": "proficiency:"
+  },
+  "pageTitle": {
+    "home": "Home — Portfolio",
+    "about": "About Me — Portfolio",
+    "portfolio": "Portfolio — Projects",
+    "contact": "Contact — Portfolio",
+    "booking": "Book a Meeting — Portfolio"
   }
 }
