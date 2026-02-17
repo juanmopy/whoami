@@ -66,4 +66,16 @@ describe('I18nService', () => {
     service.setLanguage('en');
     expect(service.isSpanish()).toBe(false);
   });
+
+  it('should translate array keys', () => {
+    service.setLanguage('en');
+    const taglines = service.translateArray('hero.taglines');
+    expect(Array.isArray(taglines)).toBe(true);
+    expect(taglines.length).toBe(4);
+    expect(taglines).toContain('Technical Lead');
+  });
+
+  it('should return empty array for missing array key', () => {
+    expect(service.translateArray('missing.array')).toEqual([]);
+  });
 });

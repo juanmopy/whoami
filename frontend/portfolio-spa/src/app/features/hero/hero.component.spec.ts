@@ -107,7 +107,7 @@ describe('HeroComponent', () => {
       createComponent('server');
       fixture.detectChanges();
 
-      expect(component['displayText']()).toBe('Full Stack Developer');
+      expect(component['displayText']()).toBe('Líder Técnico');
     });
 
     it('should start typing effect on browser platform', () => {
@@ -121,7 +121,7 @@ describe('HeroComponent', () => {
 
       const text = component['displayText']();
       expect(text.length).toBeGreaterThan(0);
-      expect('Full Stack Developer'.startsWith(text)).toBe(true);
+      expect('Technical Lead'.startsWith(text)).toBe(true);
 
       vi.useRealTimers();
     });
@@ -134,7 +134,7 @@ describe('HeroComponent', () => {
       createComponent();
       fixture.detectChanges();
 
-      expect(component['displayText']()).toBe('Full Stack Developer');
+      expect(component['displayText']()).toBe('Technical Lead');
       expect(component['prefersReducedMotion']()).toBe(true);
     });
 

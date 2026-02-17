@@ -11,6 +11,12 @@
   "hero": {
     "name": "Juan Enrique Morales Castro",
     "photoAlt": "Foto de perfil",
+    "taglines": [
+      "Líder Técnico",
+      "Desarrollador Full Stack",
+      "Cloud & DevOps",
+      "Especialista en IA"
+    ],
     "cta": {
       "projects": "Ver Proyectos",
       "contact": "Contactar"

@@ -7,7 +7,7 @@ import enTranslations from '../../../assets/i18n/en.json';
 type Language = 'en' | 'es';
 
 interface TranslationMap {
-  [key: string]: string | TranslationMap;
+  [key: string]: string | string[] | TranslationMap;
 }
 
 const SUPPORTED_LANGUAGES: Language[] = ['en', 'es'];
@@ -50,10 +50,10 @@ export class I18nService {
 
   translate(key: string): string {
     const parts = key.split('.');
-    let result: string | TranslationMap = this._translations();
+    let result: string | string[] | TranslationMap = this._translations();
 
     for (const part of parts) {
-      if (result && typeof result === 'object' && part in result) {
+      if (result && typeof result === 'object' && !Array.isArray(result) && part in result) {
         result = result[part];
       } else {
         return key;
@@ -61,6 +61,21 @@ export class I18nService {
     }
 
     return typeof result === 'string' ? result : key;
+  }
+
+  translateArray(key: string): string[] {
+    const parts = key.split('.');
+    let result: unknown = this._translations();
+
+    for (const part of parts) {
+      if (result && typeof result === 'object' && part in (result as Record<string, unknown>)) {
+        result = (result as Record<string, unknown>)[part];
+      } else {
+        return [];
+      }
+    }
+
+    return Array.isArray(result) ? (result as string[]) : [];
   }
 
   private detectLanguage(): Language {

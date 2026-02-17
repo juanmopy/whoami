@@ -15,13 +15,7 @@ import { RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { interval } from 'rxjs';
 import { TranslatePipe } from '@shared/pipes/translate.pipe';
-
-const TAGLINES: readonly string[] = [
-  'Full Stack Developer',
-  'Angular Specialist',
-  'Cloud Architect',
-  'Open Source Contributor',
-];
+import { I18nService } from '@core/services/i18n.service';
 
 const TYPING_SPEED_MS = 80;
 const DELETING_SPEED_MS = 40;
@@ -39,29 +33,33 @@ const PAUSE_BEFORE_TYPE_MS = 500;
 export class HeroComponent implements OnInit, AfterViewInit {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly destroyRef = inject(DestroyRef);
+  private readonly i18n = inject(I18nService);
   private readonly scrollIndicator = viewChild<ElementRef<HTMLElement>>('scrollIndicator');
 
   protected readonly displayText = signal('');
   protected readonly showCursor = signal(true);
   protected readonly prefersReducedMotion = signal(false);
 
+  private taglines: string[] = [];
   private taglineIndex = 0;
   private charIndex = 0;
   private isDeleting = false;
 
   ngOnInit(): void {
+    this.taglines = this.i18n.translateArray('hero.taglines');
+
     if (isPlatformBrowser(this.platformId)) {
       const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
       this.prefersReducedMotion.set(mediaQuery.matches);
 
       if (this.prefersReducedMotion()) {
-        this.displayText.set(TAGLINES[0]);
+        this.displayText.set(this.taglines[0]);
         return;
       }
 
       this.startTypingEffect();
     } else {
-      this.displayText.set(TAGLINES[0]);
+      this.displayText.set(this.taglines[0]);
     }
   }
 
@@ -79,7 +77,7 @@ export class HeroComponent implements OnInit, AfterViewInit {
 
   private startTypingEffect(): void {
     const tick = (): void => {
-      const currentTagline = TAGLINES[this.taglineIndex];
+      const currentTagline = this.taglines[this.taglineIndex];
 
       if (!this.isDeleting) {
         this.charIndex++;
@@ -98,7 +96,7 @@ export class HeroComponent implements OnInit, AfterViewInit {
 
         if (this.charIndex === 0) {
           this.isDeleting = false;
-          this.taglineIndex = (this.taglineIndex + 1) % TAGLINES.length;
+          this.taglineIndex = (this.taglineIndex + 1) % this.taglines.length;
           setTimeout(tick, PAUSE_BEFORE_TYPE_MS);
           return;
         }
