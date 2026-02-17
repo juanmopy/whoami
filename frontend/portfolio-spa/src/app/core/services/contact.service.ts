@@ -22,7 +22,7 @@ export interface ContactResponse {
 export class ContactService {
   private readonly http = inject(HttpClient);
   private readonly i18n = inject(I18nService);
-  private readonly ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+  private readonly ENDPOINT = 'https://formspree.io/f/xdalzldw';
   private readonly MAX_SUBMISSIONS = 3;
   private readonly RATE_WINDOW_MS = 60_000;
 
