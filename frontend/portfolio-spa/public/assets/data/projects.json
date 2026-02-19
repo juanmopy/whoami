@@ -1,12 +1,12 @@
 [
   {
-    "id": "project-1",
-    "title": "E-Commerce Platform",
-    "description": "Full-stack e-commerce platform with Angular frontend, Node.js backend, and PostgreSQL database. Features include real-time inventory, payment processing, and admin dashboard.",
-    "image": "assets/images/projects/project-1.webp",
-    "tags": ["Angular", "Node.js", "PostgreSQL", "Docker"],
-    "demoUrl": "https://example.com/demo1",
-    "repoUrl": "https://github.com/user/ecommerce",
+    "id": "intervia",
+    "title": "IntervIA — AI Interview Simulator",
+    "description": "AI-powered interview simulator with a 3D talking avatar, voice interaction, and real-time evaluation. Built with Angular 21, NestJS 11, and Arcee AI via OpenRouter.",
+    "image": "assets/images/projects/intervia.webp",
+    "tags": ["Angular", "NestJS", "TypeScript", "AI", "3D Avatar"],
+    "demoUrl": "https://intervia-web.onrender.com/",
+    "repoUrl": "https://github.com/juanmopy/IntervIA",
     "featured": true
   },
   {
