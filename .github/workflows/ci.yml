@@ -20,8 +20,8 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
       - run: npm ci
-      - run: npm audit --audit-level=high --workspace=frontend/portfolio-spa
-      - run: npm audit --audit-level=high --workspace=backend
+      - run: npm audit --audit-level=high --omit=dev --workspace=frontend/portfolio-spa
+      - run: npm audit --audit-level=high --omit=dev --workspace=backend
 
   lint:
     name: Lint

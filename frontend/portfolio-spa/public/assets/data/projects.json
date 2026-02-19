@@ -3,7 +3,7 @@
     "id": "intervia",
     "title": "IntervIA — AI Interview Simulator",
     "description": "AI-powered interview simulator with a 3D talking avatar, voice interaction, and real-time evaluation. Built with Angular 21, NestJS 11, and Arcee AI via OpenRouter.",
-    "image": "assets/images/projects/intervia.webp",
+    "image": "assets/images/intervia.webp",
     "tags": ["Angular", "NestJS", "TypeScript", "AI", "3D Avatar"],
     "demoUrl": "https://intervia-web.onrender.com/",
     "repoUrl": "https://github.com/juanmopy/IntervIA",
